@@ -380,3 +380,718 @@ components.homePage = `
     <!-- Footer -->
 </div>
 `
+
+components.efunHouse = `
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
+    <a class="navbar-brand" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="efun.html">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#course">KHÓA HỌC</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#baigiang">BÀI GIẢNG</a>
+          </li>  -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">LUYỆN TẬP</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">BLOGS</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item" id="user-information"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b id="display-name"></b></a></li>
+        
+           <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
+       
+      </ul>
+    </div>
+  </nav>
+  <!--/.Navbar -->
+  <!-- header -->
+  <section class="container " style="margin-top: 2%;">
+  <div class="header d-flex flex-row justify-content-between">
+    <span class="p-2"><img alt="runrun" src="./img/gif.gif"  width="120"></span>
+    <span class="p-2 align-self-center"><button class="btn btn-test" onclick="window.location.href='luyentap.html'">LÀM BÀI TEST</button></span>
+    <span class="p-2"><img alt="runrun" src="./img/flag.png" width="70"></span>
+  </div>
+  <div class="line-race"></div>
+  </section>
+  <!-- CHARTS -->
+  <section class="container" style="margin-top: 2%;" id="EFUN">
+
+    <h5 style="font-family:montserrat;">BẢNG XẾP HẠNG <i class="fas fa-chart-line" style="color: #0099ff !important"></i></h5>
+     <div class="row pt-4">
+        
+         <div class="col-lg-4">
+            <div class="card card-deflaut">
+                <div class="card-header">
+                    <div class="card-title" style="width:100%"><span class="text">Tốc độ học <i class="fas fa-chess-queen" style="color: yellow!important;"></i></span></div>
+                </div>
+                <div class="card-body">
+                    <div class="acount-info">
+                        
+                                <div class="inner">
+                                        Điểm tuần này 
+                                        <div class="count-point" style="color: green!important;">0</div>
+                                </div>
+                                <div class="inner">
+                                    Hạng tuần này
+                                    <div class="count-point"> > 100</div>
+                                </div>
+                    </div>
+                    <div class="acount-info">
+                        
+                        <div class="inner">
+                                Tổng điểm 
+                                <div class="count-point" style="color: red!important;">0</div>
+                        </div>
+                        <div class="inner">
+                            Xếp hạng
+                            <div class="count-point" style="color: orange!important;"> > 100</div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="card card-deflaut">
+                <div class="card-header" style="background:lightgreen!important">
+                    <span class="flag">
+                        <img alt="bxh" src="./img/track.png" style="width:120%">
+                      </span>
+                    <div class="card-title" style="width:100%;margin-left:53px;"><span class="text">Lộ trình học </span></div>
+                </div>
+                <div class="card-body">
+                   <div class="d-flex flex-row justify-content-between">
+                       <div class="p-2">
+                            <img src="./img/speaking.jpg" alt="" width="50" class="img-icon">
+                       </div>
+                       <div class="p-2">
+                            <p>
+                            Tổng quan về bài thi nói kết hợp với thực hành ở kỹ năng Speaking
+                           </p>
+                       </div>
+                   </div>
+                   <div class="d-flex flex-row justify-content-between">
+                    <div class="p-2">
+                         <img src="./img/listening.jpg" alt="" width="50" class="img-icon">
+                    </div>
+                    <div class="p-2">
+                         <p>
+                            Tập trung vào phần 1 và 2 ở kỹ năng Listening
+                        </p>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row justify-content-between pt-3">
+                    <div class="p-2">
+                         <img src="./img/chart.jpg" alt="" width="50" class="img-icon">
+                    </div>
+                    <div class="p-2">
+                         <p>
+                            Cách đọc biểu đồ, phân tích để làm tốt writting
+                        </p>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row justify-content-between pt-3">
+                    <div class="p-2">
+                         <img src="./img/typewriter.jpg" alt="" width="50" class="img-icon">
+                    </div>
+                    <div class="p-2">
+                         <p>
+                            Viết báo cáo về cách viết bài tiểu luận
+                            Cách trả lời những dạng câu hỏi thông dung ở kỹ năng Reading
+                        </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+         </div>
+         <div class="col-lg-4">
+             <div class="card card-deflaut">
+                 <div class="card-header" style="background: orange!important;">
+                     <div class="card-title" style="width: 100%">
+                         Racers &#127943;
+                     </div>
+                 </div>
+                 <div class="card-body">
+                     <div class="d-flex">
+                         <h4 style="width:32px">1</h4>
+                        <div class="thumbnail-wrapper d48 circular bordered b-white">
+                            <img alt="Nguyễn Văn Phúc" class="rounded-circle" src="https://api.adorable.io/avatars/55/Nguyễn Văn Phúc">
+                        </div>
+                        <p class="ml-2">Nguyễn Văn Phúc</p>
+                        <h5 class="ml-auto">2042</h5>
+                     </div>
+                     <div class="d-flex pt-3">
+                        <h4 style="width:32px">2</h4>
+                       <div class="thumbnail-wrapper d48 circular bordered b-white">
+                        <img alt="Phan Quốc Trung" src="https://api.adorable.io/avatars/55/Phan Quốc Trung" class="rounded-circle">
+                       </div>
+                       <p class="ml-2">Phan Quốc Trung</p>
+                       <h5 class="ml-auto">2039</h5>
+                    </div>
+                    <div class="d-flex pt-3">
+                        <h4 style="width:32px">3</h4>
+                       <div class="thumbnail-wrapper d48 circular bordered b-white">
+                        <img alt="Cao Ngọc Hoàng" src="https://api.adorable.io/avatars/55/Cao Ngọc Hoàng" class="rounded-circle">
+                       </div>
+                       <p class="ml-2">Cao Ngọc Hoàng</p>
+                       <h5 class="ml-auto">1907</h5>
+                    </div>
+                    <div class="d-flex pt-3">
+                        <h4 style="width:32px">4</h4>
+                       <div class="thumbnail-wrapper d48 circular bordered b-white">
+                        <img alt="Lucas Nguyễn" src="https://api.adorable.io/avatars/55/Lucas Nguyễn" class="rounded-circle">
+                       </div>
+                       <p class="ml-2">Lucas Nguyễn</p>
+                       <h5 class="ml-auto">1989</h5>
+                    </div>
+                    <div class="d-flex pt-3">
+                        <h4 style="width:32px">5</h4>
+                       <div class="thumbnail-wrapper d48 circular bordered b-white">
+                        <img alt="Phan Khanh Vuong" src="https://api.adorable.io/avatars/55/Phan Khanh Vuong" class="rounded-circle">
+                       </div>
+                       <p class="ml-2">Phan Khanh Vuong</p>
+                       <h5 class="ml-auto">1895</h5>
+                    </div>
+                    <div class="d-flex pt-3">
+                        <h4 style="width:32px">6</h4>
+                       <div class="thumbnail-wrapper d48 circular bordered b-white">
+                        <img alt="Luan Trung" src="https://api.adorable.io/avatars/55/Luan Trung" class="rounded-circle">
+                       </div>
+                       <p class="ml-2">Luan Trung</p>
+                       <h5 class="ml-auto">1895</h5>
+                    </div>
+                    <div class="d-flex pt-3">
+                        <h4 style="width:32px">7</h4>
+                       <div class="thumbnail-wrapper d48 circular bordered b-white">
+                        <img alt="Nguyen Huynh Cong Minh" src="https://api.adorable.io/avatars/55/Nguyễn Huỳnh Công Minh" class="rounded-circle">
+                       </div>
+                       <p class="ml-2">Nguyễn Huỳnh Công Minh</p>
+                       <h5 class="ml-auto">1889</h5>
+                    </div>
+                    <div class="d-flex pt-3">
+                        <h4 style="width:32px">8</h4>
+                       <div class="thumbnail-wrapper d48 circular bordered b-white">
+                        <img alt="Cao Ngọc Hoàng" src="https://api.adorable.io/avatars/55/Đặng Trung" class="rounded-circle">
+                       </div>
+                       <p class="ml-2">Đặng Trung</p>
+                       <h5 class="ml-auto">1871</h5>
+                    </div>
+                    <div class="d-flex pt-3">
+                        <h4 style="width:32px">9</h4>
+                       <div class="thumbnail-wrapper d48 circular bordered b-white">
+                        <img alt="Cao Ngọc Hoàng" src="https://api.adorable.io/avatars/55/Thảo Quyên" class="rounded-circle">
+                       </div>
+                       <p class="ml-2">Thảo Quên</p>
+                       <h5 class="ml-auto">1865</h5>
+                    </div>
+                    <div class="d-flex pt-3">
+                        <h4 style="width:32px">10</h4>
+                       <div class="thumbnail-wrapper d48 circular bordered b-white">
+                        <img alt="Cao Ngọc Hoàng" src="https://api.adorable.io/avatars/55/Nguyễn Duy" class="rounded-circle">
+                       </div>
+                       <p class="ml-2">Nguyễn Duy</p>
+                       <h5 class="ml-auto">1860</h5>
+                    </div>
+                 </div>
+             </div>
+         </div>
+         <div class="col-lg-4">
+        <div class="card card-deflaut">          
+            <div class="card-header" style="background: tomato!important;">
+                  <span class="flag">
+                    <img alt="bxh" src="https://tienganhmoingay.com/static/LearningPlan/images/new/upload/icon_ranking.png" style="width:70%">
+                  </span>
+                  <span class="card-title" style="margin-left:40px;">
+                      Charts
+                  </span>
+             </div>
+             <div class="card-body" style="min-height:465px;">
+            </div>
+            
+         </div>
+         <div class="card card-deflaut under-card">
+                <img src="./img/brain.webp" alt="" height="269" class="image" href="#">
+                <div class="overlay" style="font-weight: bold;">Khi não trái ngừng hoạt đông ? 
+                    <p style="font-size:15px!important;color: rgb(59, 58, 58)!important;">Trong bài chia sẻ tuần này, Tiếng Anh Mỗi Ngày muốn giới thiệu đến...&#129504; </p>
+                </div>
+         </div>
+    </div>
+   
+  </section>
+  <!-- /.CHARTS -->
+  <section class="container" style="margin-top: 5%;" id="course">
+    <div style="border-bottom: 2px solid yellow ;"><h5 style="font-family:montserrat; text-align: center;">KHÓA HỌC 
+        <span style="font-size:30px;"> &#128175;</span></h5></div>
+   <div class="course-content pt-5" >
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <div class="card card-deflaut active">
+                <div class="img-course">
+                    <img src="./img/headphone.jpg" alt="nghe" height="70" class="rounded-circle imgcourse">
+                    <span style="font-weight: bold;">NGHE</span>
+                </div>
+           </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-deflaut active">
+                <div class="img-course">
+                    <img src="./img/talking.jpg" alt="nghe" height="70" class="rounded-circle imgcourse">
+                    <span style="font-weight: bold;">NÓI</span>
+                </div>
+           </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center  w3-animate-right">
+        <div class="col-md-4 pt-3">
+            <div class="card card-deflaut active">
+                <div class="img-course">
+                    <img src="./img/book.jpg" alt="nghe" height="70" class="rounded-circle imgcourse">
+                    <span style="font-weight: bold;">ĐỌC</span>
+                </div>
+           </div>
+        </div>
+        <div class="col-md-4 pt-3">
+            <div class="card card-deflaut active">
+                <div class="img-course">
+                    <img src="./img/pencile.jpg" alt="nghe" height="70" class="rounded-circle imgcourse">
+                    <span style="font-weight: bold;">VIẾT</span>
+                </div>
+           </div>
+        </div>
+    </div>
+   </div>
+   
+  </section>
+  <section class="container w3-animate-zoom" style="margin-top: 5%;" id="baigiang">
+    <div style="border-bottom: 2px solid #1ab2ff;"><h5 style="font-family:montserrat; text-align: center;">BÀI GIẢNG
+        <span style="font-size:30px;"> 	&#128193;</span></h5></div>
+    <div class="lesson-tag">
+        <h5 style="font-family:montserrat; margin:4%;" class="title-tag">LESSON 1</h5>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 ">
+                <div class="service-box">
+                    <div class="service-icon yellow">
+                        <div class="front-content">
+                            <h3>Từ vựng</h3>
+                            <div style="font-size:50px">&#127828;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Từ vựng</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 ">
+                <div class="service-box">
+                    <div class="service-icon orange">
+                        <div class="front-content">
+                            <h3>Phát âm</h3>
+                            <div style="font-size:50px">&#127829;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Phát âm</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="service-box ">
+                    <div class="service-icon red">
+                        <div class="front-content">
+                            <h3>Ngữ pháp</h3>
+                            <div style="font-size:50px">&#127830;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Ngữ pháp</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="service-box">
+                    <div class="service-icon grey">
+                        <div class="front-content">
+                            <h3>Kỹ năng</h3>
+                            <div style="font-size:50px">&#127832;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>kỹ năng</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+    </div> 
+    </div>   
+    <div class="lesson-tag">
+        <h5 style="font-family:montserrat; margin:4%; color:#1ab2ff!important;" class="title-tag">LESSON 2</h5>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 ">
+                <div class="service-box">
+                    <div class="service-icon yellow">
+                        <div class="front-content">
+                            <h3>Từ vựng</h3>
+                            <div style="font-size:50px">&#127828;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Từ vựng</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 ">
+                <div class="service-box">
+                    <div class="service-icon orange">
+                        <div class="front-content">
+                            <h3>Phát âm</h3>
+                            <div style="font-size:50px">&#127829;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Phát âm</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="service-box ">
+                    <div class="service-icon red">
+                        <div class="front-content">
+                            <h3>Ngữ pháp</h3>
+                            <div style="font-size:50px">&#127830;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Ngữ pháp</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="service-box">
+                    <div class="service-icon grey">
+                        <div class="front-content">
+                            <h3>Kỹ năng</h3>
+                            <div style="font-size:50px">&#127832;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>kỹ năng</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+    </div> 
+    </div> 
+    <div class="lesson-tag">
+        <h5 style="font-family:montserrat; margin:4%;color:red!important;" class="title-tag">LESSON 3</h5>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 ">
+                <div class="service-box">
+                    <div class="service-icon yellow">
+                        <div class="front-content">
+                            <h3>Từ vựng</h3>
+                            <div style="font-size:50px">&#127828;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Từ vựng</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 ">
+                <div class="service-box">
+                    <div class="service-icon orange">
+                        <div class="front-content">
+                            <h3>Phát âm</h3>
+                            <div style="font-size:50px">&#127829;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Phát âm</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="service-box ">
+                    <div class="service-icon red">
+                        <div class="front-content">
+                            <h3>Ngữ pháp</h3>
+                            <div style="font-size:50px">&#127830;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Ngữ pháp</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="service-box">
+                    <div class="service-icon grey">
+                        <div class="front-content">
+                            <h3>Kỹ năng</h3>
+                            <div style="font-size:50px">&#127832;</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>kỹ năng</h3>
+                        <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                        <button class="btn btn-primary">Xem đi</button>
+                    </div>
+                </div>
+            </div>
+    </div> 
+    </div> 
+ </section>
+ 
+ <section class="container">
+     <div class="row row justify-content-md-center">
+        <div class="col-md-6">
+            <button  class="btn btn-link video" type="button">XEM THÊM</button>
+        </div>
+         
+     </div>
+     
+ </section>
+    
+
+   <!-- Footer -->
+<footer class="page-footer font-small special-color-dark">
+    <div class="footer-copyright text-center py-3">
+      <blockquote style="font-size:30px; font-style: italic; color:gray !important;">"9.5 IELTS dễ hơn việc cưa đổ crush"</blockquote>
+      <p style="font-weight: bold;">Ha Linh Nguyen</p>
+      <span>CEO EFUN ENGLISH</span>
+    </div>
+    <div class="container">
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1">
+              <i class="fab fa-facebook-f"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1">
+              <i class="fab fa-twitter"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+              <i class="fab fa-google-plus-g"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1">
+              <i class="fab fa-linkedin-in"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-dribbble mx-1">
+              <i class="fab fa-dribbble"> </i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-copyright text-center py-3">
+      <span class="type--fine-print">Made with &nbsp;&nbsp;<span style="font-size: 30px; vertical-align: middle;">⌨️</span>
+              &nbsp; and &nbsp;
+              <span style="font-size: 30px; vertical-align: middle;">🙌</span>
+            </span>
+        </div>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/">EFUN ENGLISH</a>
+      </div>
+     </footer>
+    <!-- Footer -->
+`
+
+components.userInformation = `
+<!--Navbar -->
+ <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
+    <a class="navbar-brand" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="efun.html">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">LUYỆN TẬP</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">BLOGS</a>
+          </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b id="display-user-name"></b></a></li>
+           
+        
+           <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
+       
+      </ul>
+    </div>
+  </nav>
+  <!--/.Navbar -->
+  <h2 style="margin-top:2%; text-align: center;">CẬP NHẬT THÔNG TIN</h2>
+  <section class="container" style="margin-top:3%;">
+      <button class="btn-back" onclick="window.location.href = 'efun.html'">Quay về khóa học
+        <i class="fas fa-caret-right" style="color:white !important;"></i></button>
+      <h5 class="title-header pt-4"><i class="far fa-user"></i> CÁ NHÂN</h5>
+      <div class="row pt-4">
+        <div class="col-sm-6">
+            <div class="card card-default">
+                <div class="card-header">
+                    <div class="card-title">Thông tin cá nhân &#128130;</div>
+                </div>
+        <div class="card-body">
+            <form>
+                <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+                    <label class="sc-fnwBNb fPHXFW" style="background-image: url(); width: 84px; height: 84px;">
+                        <!-- <input type="file" class="img-avatar"></label> -->
+                        </label>
+                </div>
+                        <div class="form-group form-group-default">
+                            <label>Họ và tên</label>
+                            <input name="name" class="form-control" type="text" readonly="" value=""></div>
+                        <div class="form-group form-group-default">
+                                <label>Email</label><input name="email" class="form-control" type="text" readonly="" value="">
+                        </div>
+                        <div class="form-group form-group-default">
+                                <label>Số điện thoại</label>
+                                <input name="phone" class="form-control" type="text" readonly="" value="">
+                        </div>
+                        <div class="form-group form-group-default">
+                                <label>Ngày sinh</label>
+                                <input name="dob" class="form-control" type="text" readonly="" value="">
+                        </div>
+                        <div class="form-group form-group-default">
+                                <label>Thành phố</label>
+                                <input name="city" class="form-control" type="text" value="Hà Nội">
+                        </div>
+                        
+                        <button class="btn btn-primary btn-cons" type="submit">Lưu</button>
+                </form>
+            </div>
+        </div>
+            <div class="card card-default active-user">
+                <div class="card-header">
+                    <div class="card-title">Đổi mật khẩu &#128273;</div>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group form-group-default">
+                            <label>Mật khẩu mới</label>
+                            <input name="password" class="form-control" type="password" value="">
+                        </div>
+                        <button class="btn btn-primary btn-cons" type="submit">Đổi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-deflaut">
+                <div class="card-header">
+                    <div class="card-title" style="width:100%"><span class="text">Tốc độ học <i class="fas fa-chess-queen" style="color: yellow!important;"></i></span></div>
+                </div>
+                <div class="card-body">
+                    <div class="acount-info">
+                        
+                                <div class="inner">
+                                        Điểm tuần này 
+                                        <div class="count-point" style="color: green!important;">0</div>
+                                </div>
+                                <div class="inner">
+                                    Hạng tuần này
+                                    <div class="count-point"> > 100</div>
+                                </div>
+                    </div>
+                    <div class="acount-info">
+                        
+                        <div class="inner">
+                                Tổng điểm 
+                                <div class="count-point" style="color: red!important;">0</div>
+                        </div>
+                        <div class="inner">
+                            Xếp hạng
+                            <div class="count-point" style="color: orange!important;"> > 100</div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="card card-default active-user">
+                <div class="card-header">
+                    <div class="card-title">
+                        Email của mentor &#128172;
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="title-email">
+                        <h6 style="width:32px">1</h6>
+                        <span class="email-mentor">linhnguyenchi227@gmail.com</span>
+                        <span><button class="btn-copy">Sao chép</button></span>
+                        <span><button class="btn-meet">Meet</button></span>
+                    </div>
+                    <div class="title-email">
+                        <h6 style="width:32px">2</h6>
+                        <span class="email-mentor">someone@gmail.com</span>
+                        <span><button class="btn-copy">Sao chép</button></span>
+                        <span><button class="btn-meet">Meet</button></span>
+                    </div>
+                    <div class="title-email">
+                        <h6 style="width:32px">4</h6>
+                        <span class="email-mentor">hihi@gmail.com</span>
+                        <span><button class="btn-copy">Sao chép</button></span>
+                        <span><button class="btn-meet">Meet</button></span>
+                    </div>
+                    <div class="title-email">
+                        <h6 style="width:32px">5</h6>
+                        <span class="email-mentor">thichthiden@gmail.com</span>
+                        <span><button class="btn-copy">Sao chép</button></span>
+                        <span><button class="btn-meet">Meet</button></span>
+                    </div>
+                    <div class="title-email">
+                        <h6 style="width:32px">2</h6>
+                        <span class="email-mentor">someone@gmail.com</span>
+                     
+                        <span><button class="btn-copy ">Sao chép</button></span>
+                        <span><button class="btn-meet">Meet</button></span>
+                      
+ 
+                    </div>
+                    <button class="btn btn-danger btn-cons" style="margin-top:5%; font-weight: bold;" type="submit">BOOKING</button>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+  </section>
+`

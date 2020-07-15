@@ -90,7 +90,41 @@ view.showScreen = async function (screenName){
             }
 
             break;
-    }
+        case 'efunHouse':
+            content.innerHTML = components.efunHouse;
+
+            //link to user information when click on avatar or username
+            let userInfor = document.getElementById('user-information');
+            userInfor.onclick = function (){
+                view.showScreen('userInformation');
+            }
+
+            //sign out when user click on sign out button
+            let signOut = document.getElementById('btn-logout');
+            signOut.onclick = function () {
+                controller.signOut();
+            }
+
+            //display user name
+            let userName = document.getElementById("display-name");
+            
+            userName.innerHTML = firebase.auth().currentUser.displayName;
+            
+            break;
+        case 'userInformation':
+            content.innerHTML = components.userInformation;
+            //sign out when user click on sign out button
+            let logOut = document.getElementById('btn-logout');
+            logOut.onclick = function () {
+                controller.signOut();
+            }
+
+            //display user name in user page
+            let nameOnNav = document.getElementById('display-user-name');
+            nameOnNav.innerHTML = firebase.auth().currentUser.displayName;
+
+            break;
+    }       
 }
 
 view.validate = function (condition, errorTag, message) {
