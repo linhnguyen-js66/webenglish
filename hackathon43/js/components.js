@@ -384,7 +384,7 @@ components.homePage = `
 components.efunHouse = `
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
-    <a class="navbar-brand" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <a class="navbar-brand back-to-home-page" href="#"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
       aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon bg-dark"></span>
@@ -392,7 +392,7 @@ components.efunHouse = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="efun.html">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          <a class="nav-link" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="#course">KHÓA HỌC</a>
@@ -401,14 +401,14 @@ components.efunHouse = `
             <a class="nav-link" href="#baigiang">BÀI GIẢNG</a>
           </li>  -->
           <li class="nav-item">
-            <a class="nav-link" href="#">LUYỆN TẬP</a>
+            <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
           </li>
         <li class="nav-item">
           <a class="nav-link" href="#">BLOGS</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item" id="user-information"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b id="display-name"></b></a></li>
+        <li class="nav-item" id="user-information"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
         
            <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
@@ -934,7 +934,7 @@ components.efunHouse = `
 components.userInformation = `
 <!--Navbar -->
  <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
-    <a class="navbar-brand" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <a class="navbar-brand back-to-home-page" href="#"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
       aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon bg-dark"></span>
@@ -942,17 +942,17 @@ components.userInformation = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="efun.html">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+            <a class="nav-link" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
           </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">LUYỆN TẬP</a>
+              <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
             </li>
           <li class="nav-item">
             <a class="nav-link" href="#">BLOGS</a>
           </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b id="display-user-name"></b></a></li>
+        <li class="nav-item"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
            
         
            <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
@@ -963,7 +963,7 @@ components.userInformation = `
   <!--/.Navbar -->
   <h2 style="margin-top:2%; text-align: center;">CẬP NHẬT THÔNG TIN</h2>
   <section class="container" style="margin-top:3%;">
-      <button class="btn-back" onclick="window.location.href = 'efun.html'">Quay về khóa học
+      <button class="btn-back" id="back-to-efun">Quay về khóa học
         <i class="fas fa-caret-right" style="color:white !important;"></i></button>
       <h5 class="title-header pt-4"><i class="far fa-user"></i> CÁ NHÂN</h5>
       <div class="row pt-4">
@@ -973,32 +973,40 @@ components.userInformation = `
                     <div class="card-title">Thông tin cá nhân &#128130;</div>
                 </div>
         <div class="card-body">
-            <form>
+            <form id="profile-form">
                 <div style="display: flex; justify-content: center; margin-bottom: 10px;">
                     <label class="sc-fnwBNb fPHXFW" style="background-image: url(); width: 84px; height: 84px;">
                         <!-- <input type="file" class="img-avatar"></label> -->
-                        </label>
+                    </label>
                 </div>
-                        <div class="form-group form-group-default">
-                            <label>Họ và tên</label>
-                            <input name="name" class="form-control" type="text" readonly="" value=""></div>
-                        <div class="form-group form-group-default">
-                                <label>Email</label><input name="email" class="form-control" type="text" readonly="" value="">
-                        </div>
-                        <div class="form-group form-group-default">
-                                <label>Số điện thoại</label>
-                                <input name="phone" class="form-control" type="text" readonly="" value="">
-                        </div>
-                        <div class="form-group form-group-default">
-                                <label>Ngày sinh</label>
-                                <input name="dob" class="form-control" type="text" readonly="" value="">
-                        </div>
-                        <div class="form-group form-group-default">
-                                <label>Thành phố</label>
-                                <input name="city" class="form-control" type="text" value="Hà Nội">
-                        </div>
-                        
-                        <button class="btn btn-primary btn-cons" type="submit">Lưu</button>
+                    <div class="form-group form-group-default">
+                        <label>Họ và tên</label>
+                        <input name="name" class="form-control" id="name-field" type="text" value="">
+                    </div>
+                    <div class="message-error" id="name-error"></div>
+                    <div class="form-group form-group-default">
+                            <label>Email</label>
+                            <input name="email" class="form-control" id="email-field" type="text" value="">
+                    </div>
+                    <div class="message-error" id="email-error"></div>
+                    <div class="form-group form-group-default">
+                            <label>Số điện thoại</label>
+                            <input name="phone" class="form-control" id="phone-number" type="text" value="">
+                    </div>
+                    <div class="message-error" id="phone-number-error"></div>
+                    <div class="form-group form-group-default">
+                            <label>Ngày sinh</label>
+                            <input name="dob" class="form-control" id="birthday" type="text" value="">
+                    </div>
+                    <div class="message-error" id="birthday-error"></div>
+                    <div class="form-group form-group-default">
+                            <label>Thành phố</label>
+                            <input name="city" class="form-control" id="city" type="text" value="Hà Nội">
+                    </div>
+                    <div class="message-error" id="city-error"></div>
+                    <button class="btn btn-primary btn-cons" id="submit-btn" type="submit">Lưu</button>
+                    <div class="message-error" id="submit-error"></div>
+                    <div class="message-success" id="submit-success"></div>
                 </form>
             </div>
         </div>
@@ -1093,5 +1101,325 @@ components.userInformation = `
             </div>
         </div>
       </div>
+  </section>
+`
+
+components.studyPage = `
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
+    <a class="navbar-brand" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="efun.html">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#course">KHÓA HỌC</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#baigiang">BÀI GIẢNG</a>
+          </li>  -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">LUYỆN TẬP</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">BLOGS</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item"><a class="navbar-avataruser" href="user.html"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b>Linh</b></a></li>
+           
+        
+           <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
+       
+      </ul>
+    </div>
+  </nav>
+  <!--/.Navbar -->
+  <section class="container">
+    <div class="row pt-4">
+        <div class="col-sm-4">
+            <div class="card card-default">
+                <div class="card-header">
+                    <div class="card-title">
+                         Số điểm tích lũy 
+                    </div>
+                </div>
+                <div class="card-body">
+                        <div class="d-flex flex-row justify-content-around">
+                            <div class="p-2 card-on">
+                                  100
+                            </div>
+                            <div class="p-2 card-under">
+                                  20 xu  <span style="font-size:30px;">&#128176;</span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="card card-default">
+                <div class="card-header">
+                    <div class="card-title">
+                       <h5>NGHE</h5> 
+                    </div>
+                </div>
+                <div class="card-body card-scroll">
+                        <div class="card-content">
+                          <div class="d-flex flex-row justify-content-between">
+                            <div class="p-2">
+                            <h5 class="content-header">IELTS Listening test 1</h5>
+                            <p>Update 5/7/2020</p>
+                            </div>
+                            <div class="p-2">
+                              <button>click</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-content">
+                          <div class="d-flex flex-row justify-content-between">
+                            <div class="p-2">
+                            <h5 class="content-header">IELTS Listening test 1</h5>
+                            <p>Update 5/7/2020</p>
+                            </div>
+                            <div class="p-2">
+                              <button>click</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-content">
+                          <div class="d-flex flex-row justify-content-between">
+                            <div class="p-2">
+                            <h5 class="content-header">IELTS Listening test 1</h5>
+                            <p>Update 5/7/2020</p>
+                            </div>
+                            <div class="p-2">
+                              <button>click</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-content">
+                          <div class="d-flex flex-row justify-content-between">
+                            <div class="p-2">
+                            <h5 class="content-header">IELTS Listening test 1</h5>
+                            <p>Update 5/7/2020</p>
+                            </div>
+                            <div class="p-2">
+                              <button>click</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-content">
+                          <div class="d-flex flex-row justify-content-between">
+                            <div class="p-2">
+                            <h5 class="content-header">IELTS Listening test 1</h5>
+                            <p>Update 5/7/2020</p>
+                            </div>
+                            <div class="p-2">
+                              <button>click</button>
+                            </div>
+                          </div>
+                        </div>
+                </div>
+            </div>
+            <div class="card card-default">
+              <div class="card-header">
+                  <div class="card-title">
+                     <h5>NÓI</h5> 
+                  </div>
+              </div>
+              <div class="card-body card-scroll">
+                      <div class="card-content">
+                        <div class="d-flex flex-row justify-content-between">
+                          <div class="p-2">
+                          <h5 class="content-header">IELTS Speaking test 1</h5>
+                          <p>Update 5/7/2020</p>
+                          </div>
+                          <div class="p-2">
+                            <button>click</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-content">
+                        <div class="d-flex flex-row justify-content-between">
+                          <div class="p-2">
+                          <h5 class="content-header">IELTS Speaking test 1</h5>
+                          <p>Update 5/7/2020</p>
+                          </div>
+                          <div class="p-2">
+                            <button>click</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-content">
+                        <div class="d-flex flex-row justify-content-between">
+                          <div class="p-2">
+                          <h5 class="content-header">IELTS Speaking test 1</h5>
+                          <p>Update 5/7/2020</p>
+                          </div>
+                          <div class="p-2">
+                            <button>click</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-content">
+                        <div class="d-flex flex-row justify-content-between">
+                          <div class="p-2">
+                          <h5 class="content-header">IELTS Speaking test 1</h5>
+                          <p>Update 5/7/2020</p>
+                          </div>
+                          <div class="p-2">
+                            <button>click</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-content">
+                        <div class="d-flex flex-row justify-content-between">
+                          <div class="p-2">
+                          <h5 class="content-header">IELTS Speaking test 1</h5>
+                          <p>Update 5/7/2020</p>
+                          </div>
+                          <div class="p-2">
+                            <button>click</button>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+          </div>
+          <div class="card card-default">
+            <div class="card-header">
+                <div class="card-title">
+                   <h5>ĐỌC</h5> 
+                </div>
+            </div>
+            <div class="card-body card-scroll">
+                    <div class="card-content">
+                      <div class="d-flex flex-row justify-content-between">
+                        <div class="p-2">
+                        <h5 class="content-header">IELTS Reading test 1</h5>
+                        <p>Update 5/7/2020</p>
+                        </div>
+                        <div class="p-2">
+                          <button>click</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="d-flex flex-row justify-content-between">
+                        <div class="p-2">
+                        <h5 class="content-header">IELTS Reading test 1</h5>
+                        <p>Update 5/7/2020</p>
+                        </div>
+                        <div class="p-2">
+                          <button>click</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="d-flex flex-row justify-content-between">
+                        <div class="p-2">
+                        <h5 class="content-header">IELTS Reading test 1</h5>
+                        <p>Update 5/7/2020</p>
+                        </div>
+                        <div class="p-2">
+                          <button>click</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="d-flex flex-row justify-content-between">
+                        <div class="p-2">
+                        <h5 class="content-header">IELTS Reading test 1</h5>
+                        <p>Update 5/7/2020</p>
+                        </div>
+                        <div class="p-2">
+                          <button>click</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="d-flex flex-row justify-content-between">
+                        <div class="p-2">
+                        <h5 class="content-header">IELTS Reading test 1</h5>
+                        <p>Update 5/7/2020</p>
+                        </div>
+                        <div class="p-2">
+                          <button>click</button>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+        </div>
+        <div class="card card-default">
+          <div class="card-header">
+              <div class="card-title">
+                 <h5>VIẾT</h5> 
+              </div>
+          </div>
+          <div class="card-body card-scroll">
+                  <div class="card-content">
+                    <div class="d-flex flex-row justify-content-between">
+                      <div class="p-2">
+                      <h5 class="content-header">IELTS Writting test 1</h5>
+                      <p>Update 5/7/2020</p>
+                      </div>
+                      <div class="p-2">
+                        <button>click</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="d-flex flex-row justify-content-between">
+                      <div class="p-2">
+                      <h5 class="content-header">IELTS Writting test 1</h5>
+                      <p>Update 5/7/2020</p>
+                      </div>
+                      <div class="p-2">
+                        <button>click</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="d-flex flex-row justify-content-between">
+                      <div class="p-2">
+                      <h5 class="content-header">IELTS Writting test 1</h5>
+                      <p>Update 5/7/2020</p>
+                      </div>
+                      <div class="p-2">
+                        <button>click</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="d-flex flex-row justify-content-between">
+                      <div class="p-2">
+                      <h5 class="content-header">IELTS Writting test 1</h5>
+                      <p>Update 5/7/2020</p>
+                      </div>
+                      <div class="p-2">
+                        <button>click</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="d-flex flex-row justify-content-between">
+                      <div class="p-2">
+                      <h5 class="content-header">IELTS Writting test 1</h5>
+                      <p>Update 5/7/2020</p>
+                      </div>
+                      <div class="p-2">
+                        <button>click</button>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+      </div>
+        </div>
+        
+    </div>
   </section>
 `

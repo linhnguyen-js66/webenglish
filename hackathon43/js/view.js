@@ -100,30 +100,102 @@ view.showScreen = async function (screenName){
             }
 
             //sign out when user click on sign out button
-            let signOut = document.getElementById('btn-logout');
+            let signOut = document.getElementsByClassName('btn-logout')[0];
             signOut.onclick = function () {
                 controller.signOut();
             }
 
             //display user name
-            let userName = document.getElementById("display-name");
-            
+            let userName = document.getElementsByClassName("display-name")[0];
             userName.innerHTML = firebase.auth().currentUser.displayName;
             
+            //back to home page
+            let backToHomePage = document.getElementsByClassName('back-to-home-page')[0];
+            backToHomePage.onclick = function () {
+                view.showScreen('homePage');
+            }
+
+            //link to study page
+            let studyPage = document.getElementsByClassName('study-page')[0];
+            studyPage.onclick = function () {
+                view.showScreen('studyPage');
+            }
+
             break;
         case 'userInformation':
             content.innerHTML = components.userInformation;
-            //sign out when user click on sign out button
-            let logOut = document.getElementById('btn-logout');
-            logOut.onclick = function () {
-                controller.signOut();
+
+            //back to home page
+            let clickToHomePage = document.getElementsByClassName('back-to-home-page')[0];
+            clickToHomePage.onclick = function () {
+                view.showScreen('homePage');
             }
 
-            //display user name in user page
-            let nameOnNav = document.getElementById('display-user-name');
-            nameOnNav.innerHTML = firebase.auth().currentUser.displayName;
+            //sign out when user click on sign out button
+            let logOutButton = document.getElementsByClassName('btn-logout')[0];
+            logOutButton.onclick = function () {
+                controller.signOut();
+            }
+            //display user name
+            let displayUser = document.getElementsByClassName("display-name")[0];
+            displayUser.innerHTML = firebase.auth().currentUser.displayName;
 
+            //link to study page
+            let study = document.getElementsByClassName('study-page')[0];
+            study.onclick = function () {
+                view.showScreen('studyPage');
+            }
+
+            //Return to efun page
+            let returnToEfun = document.getElementById('back-to-efun');
+            returnToEfun.onclick = function () {
+                view.showScreen('efunHouse');
+            }
+
+            // document.getElementById('name-field').value = firebase.auth().currentUser.displayName;
+            // document.getElementById('email-field').value = firebase.auth().currentUser.email;
+            
+            document.getElementById('name-field').value = firebase.auth().currentUser.displayName;
+            document.getElementById('email-field').value = firebase.auth().currentUser.email;
+            document.getElementById('phone-number').value = firebase.auth().currentUser.phoneNumber;
+            document.getElementById('birthday').value = firebase.auth().currentUser.birthday;
+            document.getElementById('city').value = firebase.auth().currentUser.city;
+
+            // validate user input in profile form
+            let profileForm = document.getElementById('profile-form');
+            profileForm.onsubmit = function (event) {
+                event.preventDefault();
+                
+                let nameField = document.getElementById('name-field').value;
+                let emailField = document.getElementById('email-field').value;
+                let phoneNumber = document.getElementById('phone-number').value;
+                let birthday = document.getElementById('birthday').value;
+                let city = document.getElementById('city').value;
+
+                // get user data in profile form
+                // document.getElementById('name-field').value = firebase.auth().currentUser.displayName;
+                // document.getElementById('email-field').value = firebase.auth().currentUser.email;
+                // document.getElementById('phone-number').value = firebase.auth().currentUser.phoneNumber;
+                // document.getElementById('birthday').value = firebase.auth().currentUser.birthday;
+                // document.getElementById('city').value = firebase.auth().currentUser.city;
+                
+                let validateField = [
+                    view.validate(nameField != "", "name-error", "Input your name"),
+                    view.validate(emailField != "" && validateEmail(emailField), "email-error", "Invalid email"),
+                    view.validate(phoneNumber != typeof String && validatePhoneNumber(phoneNumber), "phone-number-error", "Invalid phone number"),
+                    view.validate(birthday != "", "birthday-error", "Input your birthday"),
+                    view.validate(city != "", "city-error", "Input your city")
+                ]
+                
+                if (isPassed(validateField)) {
+                    //send data to controller
+                    controller.updateProfileForm(nameField, emailField, phoneNumber, birthday, city);
+                }
+            }
+            
             break;
+        case 'studyPage':
+            content.innerHTML = components.studyPage;
     }       
 }
 

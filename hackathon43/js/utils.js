@@ -1,4 +1,4 @@
-// trả về true nếu mọi giá trị trong mảng đúng và ngược lại
+//returns true if the value is true and vice versa
 function isPassed(validateResult) {
     let isFail = validateResult.includes(false);
 
@@ -10,13 +10,24 @@ function isPassed(validateResult) {
     // return !isFail;
 }
 
-// kiểm tra format của email
-function validateEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+//check email format
+// function validateEmail(email) {
+//     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     return re.test(String(email).toLowerCase());
+// }
+
+function validateEmail(elementValue){      
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(elementValue); 
+} 
+
+//check phone number format
+function validatePhoneNumber(telephoneNumber){
+    const phoneNum = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+    return phoneNum.test(telephoneNumber);
 }
 
-// làm mịn dữ liệu từ firebase
+//raw data from firebase
 function refineData (rawData) {
     let data = rawData.data();
     data.id = rawData.id;

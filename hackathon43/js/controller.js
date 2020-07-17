@@ -42,3 +42,25 @@ controller.signOut = async function (currentUser){
     //sign out
     await firebase.auth().signOut();
 }
+
+controller.updateProfileForm = async function (name, email, phoneNumber, birthday, city){
+    view.setText("submit-success", "");
+    view.setText("submit-error", "");
+    view.setActive("submit-btn", false);
+
+    try {
+        //update profile
+        await firebase.auth().currentUser.updateProfile({
+            displayName : name,
+            email : email,
+            phoneNumber : phoneNumber,
+            birthday : birthday,
+            city : city
+        });
+
+        view.setText("submit-success", "Your profile has been updated.");
+    } catch (error) {
+        view.setText("submit-error", error.message);
+        view.setActive("submit-btn", true);
+    }
+}
