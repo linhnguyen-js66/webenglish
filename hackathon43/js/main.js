@@ -2,8 +2,12 @@ window.onload = function() {
     view.showScreen('homePage');
     firebase.auth().onAuthStateChanged(function(user) {
         console.log(user);
-        if(user != null) {
-            view.showScreen("efunHouse");
+        if(user != null && user.emailVerified) {
+            if(!user.emailVerified){
+                view.showScreen('signIn');
+            }else{
+                view.showScreen("efunHouse");
+            }
             // if(view.showScreen("homePage")){
             //     let removeFreeTrialButton = document.getElementById('sign-up-link');
             //     removeFreeTrialButton.innerHTML = `

@@ -1135,7 +1135,7 @@ components.studyPage = `
         </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+        <li class="nav-item"><a class="navbar-avataruser" id="user-profile" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
            
         
            <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
@@ -1442,12 +1442,15 @@ components.forgotPassword = `
                 <img src="./img/logoefun.png" alt="logo" class="logo">
               </div>
               <p class="login-card-description">QUÊN MẬT KHẨU &#128542;</p>
-              <form action="#!">
+              <form action="#!" id="forgot-password-form">
                   <div class="form-group mb-4">
                     <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="user-email" class="form-control" placeholder="Email">
+                    <input type="email" name="email" id="register-email" class="form-control" placeholder="Email">
+                    <div class="message-error" id="email-error"></div>
                   </div>
-                  <input name="reset" id="reset_password" class="btn btn-block login-btn mb-4" type="button" value="Xác nhận">
+                  <button name="reset" id="reset-password-btn" class="btn btn-block login-btn mb-4">Xác nhận</button>
+                  <div class="message-success" id="reset-password-success"></div>
+                  <div class="message-error" id="reset-password-error"></div>
                 </form>
                 </nav>
             </div>

@@ -245,10 +245,10 @@ view.showScreen = async function (screenName){
                 view.showScreen('efunHouse');
             }
 
-            // let practicalExercise = document.getElementsByClassName('study-page')[0];
-            // practicalExercise.onclick = function () {
-            //     view.showScreen('studyPage');
-            // }
+            let userProfile = document.getElementById('user-profile');
+            userProfile.onclick = function (){
+                view.showScreen('userInformation');
+            }
 
             //sign out when user click on sign out button
             let clickOnLogOutButton = document.getElementsByClassName('btn-logout')[0];
@@ -263,8 +263,21 @@ view.showScreen = async function (screenName){
             break;
         case 'forgotPassword':
             content.innerHTML = components.forgotPassword;
-            break;
             
+            let forgotPasswordForm = document.getElementById('forgot-password-form');
+            forgotPasswordForm.onsubmit = function (event){
+                event.preventDefault();
+
+                let registerEmail = document.getElementById('register-email').value;
+                console.log(registerEmail);
+                let validateEmailInputted = view.validate(registerEmail != "" && validateEmail(registerEmail) , "email-error", "Invalid Email.");
+                if (validateEmailInputted) {
+                    controller.forgotPassword(registerEmail);
+                }
+            }
+
+            
+            break;
     }       
 }
 
