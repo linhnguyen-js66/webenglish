@@ -33,3 +33,9 @@ function refineData (rawData) {
     data.id = rawData.id;
     return data;
 }
+
+//validate password form
+function validatePassword (password){
+    const newPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+    return newPassword.test(password);
+}

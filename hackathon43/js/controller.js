@@ -9,9 +9,12 @@ controller.signUp = async function (name, email, password) {
         //create account => log in automatically => display EFUN home page
         await firebase.auth().createUserWithEmailAndPassword(email, password);
         //edit your display name
+       
         await firebase.auth().currentUser.updateProfile({
-            displayName: name
+            displayName: name,
+            email: email
         });
+        
         //verify account
         await firebase.auth().currentUser.sendEmailVerification();
         //alert sign in successfully
@@ -63,4 +66,19 @@ controller.updateProfileForm = async function (name, email, phoneNumber, birthda
         view.setText("submit-error", error.message);
         view.setActive("submit-btn", true);
     }
+}
+
+controller.changePassword = async function (password){
+    let user = firebase.auth().currentUser;
+    let newPassword = document.getElementById('input-new-password').value;
+    user.updatePassword(newPassword).then(function() {
+        // Update successful.
+        view.setText("submit-password-success", "Your password has been changed.");
+        view.setActive("submit-password-btn", false);
+
+    }).catch(function(error) {
+        // An error happened.
+        view.setText("submit-password-error", error.message);
+        view.setActive("submit-password-btn", true);
+    });
 }

@@ -13,6 +13,21 @@ view.showScreen = async function (screenName){
                 view.showScreen('signUp');
             }
             
+            firebase.auth().onAuthStateChanged(function(user) {
+                if(user != null) {
+                    let removeFreeTrialButton = document.getElementById('sign-up-link');
+                    removeFreeTrialButton.innerHTML = `
+                    <li class="nav-item"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+                    `;
+                    removeFreeTrialButton.onclick = function () {
+                    view.showScreen('userInformation');
+                    }
+                    let linkToCourse = document.getElementById('efun-house-link');
+                    linkToCourse.onclick = function (){
+                        view.showScreen('efunHouse');
+                    }
+                }
+            });
             break;
 
         case 'signIn':
@@ -27,6 +42,13 @@ view.showScreen = async function (screenName){
             signUp.onclick = function(){
                 view.showScreen('signUp');
             }
+
+            let forgotPassword = document.getElementById('forgot-password');
+            forgotPassword.onclick = function(){
+                view.showScreen('forgotPassword');
+            }
+
+
 
             //Sign In
             let formSignIn = document.getElementById('form-sign-in');
@@ -48,6 +70,7 @@ view.showScreen = async function (screenName){
                 }
 
             }
+
             break;
 
         case 'signUp':
@@ -90,6 +113,7 @@ view.showScreen = async function (screenName){
             }
 
             break;
+        
         case 'efunHouse':
             content.innerHTML = components.efunHouse;
 
@@ -122,6 +146,7 @@ view.showScreen = async function (screenName){
             }
 
             break;
+        
         case 'userInformation':
             content.innerHTML = components.userInformation;
 
@@ -136,6 +161,7 @@ view.showScreen = async function (screenName){
             logOutButton.onclick = function () {
                 controller.signOut();
             }
+
             //display user name
             let displayUser = document.getElementsByClassName("display-name")[0];
             displayUser.innerHTML = firebase.auth().currentUser.displayName;
@@ -147,14 +173,16 @@ view.showScreen = async function (screenName){
             }
 
             //Return to efun page
-            let returnToEfun = document.getElementById('back-to-efun');
+            let returnToEfun = document.getElementsByClassName('back-to-efun')[0];
             returnToEfun.onclick = function () {
                 view.showScreen('efunHouse');
             }
 
-            // document.getElementById('name-field').value = firebase.auth().currentUser.displayName;
-            // document.getElementById('email-field').value = firebase.auth().currentUser.email;
-            
+            let clickOnEfunHouse = document.getElementsByClassName('back-to-efun')[0];
+            clickOnEfunHouse.onclick = function(){
+                view.showScreen('efunHouse');
+            }
+
             document.getElementById('name-field').value = firebase.auth().currentUser.displayName;
             document.getElementById('email-field').value = firebase.auth().currentUser.email;
             document.getElementById('phone-number').value = firebase.auth().currentUser.phoneNumber;
@@ -182,7 +210,7 @@ view.showScreen = async function (screenName){
                 let validateField = [
                     view.validate(nameField != "", "name-error", "Input your name"),
                     view.validate(emailField != "" && validateEmail(emailField), "email-error", "Invalid email"),
-                    view.validate(phoneNumber != typeof String && validatePhoneNumber(phoneNumber), "phone-number-error", "Invalid phone number"),
+                    view.validate(phoneNumber != "" && validatePhoneNumber(phoneNumber), "phone-number-error", "Invalid phone number"),
                     view.validate(birthday != "", "birthday-error", "Input your birthday"),
                     view.validate(city != "", "city-error", "Input your city")
                 ]
@@ -193,9 +221,50 @@ view.showScreen = async function (screenName){
                 }
             }
             
+            let changePasswordForm = document.getElementById('change-password-form');
+            changePasswordForm.onsubmit = function (event) {
+                event.preventDefault();
+                let newPassword = document.getElementById('input-new-password').value;
+                let validatePasswordInputted = view.validate(newPassword != "" && validatePassword(newPassword), "password-error", "Invalid password.");
+                if(validatePasswordInputted){
+                    controller.changePassword(newPassword);
+                }
+            }
+
             break;
+       
         case 'studyPage':
             content.innerHTML = components.studyPage;
+            let clickOnLogo = document.getElementsByClassName('back-to-home-page')[0];
+            clickOnLogo.onclick = function () {
+                view.showScreen('homePage');
+            }
+
+            let clickOnEfunLink = document.getElementsByClassName('back-to-efun')[0];
+            clickOnEfunLink.onclick = function () {
+                view.showScreen('efunHouse');
+            }
+
+            // let practicalExercise = document.getElementsByClassName('study-page')[0];
+            // practicalExercise.onclick = function () {
+            //     view.showScreen('studyPage');
+            // }
+
+            //sign out when user click on sign out button
+            let clickOnLogOutButton = document.getElementsByClassName('btn-logout')[0];
+            clickOnLogOutButton.onclick = function () {
+                controller.signOut();
+            }
+            
+            //display user name
+            let displayUserName = document.getElementsByClassName("display-name")[0];
+            displayUserName.innerHTML = firebase.auth().currentUser.displayName;
+
+            break;
+        case 'forgotPassword':
+            content.innerHTML = components.forgotPassword;
+            break;
+            
     }       
 }
 

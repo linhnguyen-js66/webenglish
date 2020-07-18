@@ -82,7 +82,7 @@ components.signIn = `
                         <button id="login-btn" class="btn btn-block login-btn mb-4">Đăng nhập</button>
                         <div class="message-error" id="sign-in-error"></div>
                     </form>
-                    <a href="#!" class="forgot-password-link">Bạn quên mật khẩu?</a>
+                    <a href="#!" class="forgot-password-link" id="forgot-password">Bạn quên mật khẩu?</a>
                     <p class="login-card-footer-text">Tạo tài khoản mới? <a href="#!" class="text-reset" style="color: orange !important;" id="sign--up"> Đi theo EFUN nào!</a></p>
                     <nav class="login-card-footer-nav">
                         <a href="#!">Terms of use.</a>
@@ -94,6 +94,7 @@ components.signIn = `
     </div>
 </div>
 `
+
 components.homePage = `
 <div id="home-page-content">
     <!--Navbar -->
@@ -111,7 +112,7 @@ components.homePage = `
                 </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#EFUN">EFUN <i class="fas fa-star" style="color:red !important;"></i></a>
+                <a class="nav-link" id="efun-house-link" href="#EFUN">EFUN<i class="fas fa-star" style="color:red !important;"></i></a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#IDOLS">IDOLS</a>
@@ -119,7 +120,7 @@ components.homePage = `
                 <li class="nav-item">
                 <a class="nav-link" href="#">BLOGS</a>
                 </li>
-                <button class="btn btn-link" id="sign-up-link" type="button" onclick="#">HỌC MIỄN PHÍ</button>
+                <button class="btn btn-link" id="sign-up-link" type="button">HỌC MIỄN PHÍ</button>
                 
             </ul>
         </div>
@@ -942,7 +943,7 @@ components.userInformation = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+            <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
           </li>
             <li class="nav-item">
               <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
@@ -963,7 +964,7 @@ components.userInformation = `
   <!--/.Navbar -->
   <h2 style="margin-top:2%; text-align: center;">CẬP NHẬT THÔNG TIN</h2>
   <section class="container" style="margin-top:3%;">
-      <button class="btn-back" id="back-to-efun">Quay về khóa học
+      <button class="btn-back back-to-efun" >Quay về khóa học
         <i class="fas fa-caret-right" style="color:white !important;"></i></button>
       <h5 class="title-header pt-4"><i class="far fa-user"></i> CÁ NHÂN</h5>
       <div class="row pt-4">
@@ -1015,12 +1016,15 @@ components.userInformation = `
                     <div class="card-title">Đổi mật khẩu &#128273;</div>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form id="change-password-form">
                         <div class="form-group form-group-default">
                             <label>Mật khẩu mới</label>
-                            <input name="password" class="form-control" type="password" value="">
+                            <input name="password" id="input-new-password" class="form-control" type="password" value="">
                         </div>
-                        <button class="btn btn-primary btn-cons" type="submit">Đổi</button>
+                        <div class="message-error" id="password-error"></div>
+                        <button class="btn btn-primary btn-cons" id="submit-password-btn" type="submit">Đổi</button>
+                        <div class="message-success" id="submit-password-success"></div>
+                        <div class="message-error" id="submit-password-error"></div>
                     </form>
                 </div>
             </div>
@@ -1107,7 +1111,7 @@ components.userInformation = `
 components.studyPage = `
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
-    <a class="navbar-brand" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <a class="navbar-brand back-to-home-page" href="#"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
       aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon bg-dark"></span>
@@ -1115,7 +1119,7 @@ components.studyPage = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="efun.html">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="#course">KHÓA HỌC</a>
@@ -1131,7 +1135,7 @@ components.studyPage = `
         </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item"><a class="navbar-avataruser" href="user.html"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b>Linh</b></a></li>
+        <li class="nav-item"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
            
         
            <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
@@ -1422,4 +1426,35 @@ components.studyPage = `
         
     </div>
   </section>
+`
+
+components.forgotPassword = `
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+      <div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <img src="./img/unnamed.gif" alt="login" class="login-card-img">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="brand-wrapper">
+                <img src="./img/logoefun.png" alt="logo" class="logo">
+              </div>
+              <p class="login-card-description">QUÊN MẬT KHẨU &#128542;</p>
+              <form action="#!">
+                  <div class="form-group mb-4">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" name="email" id="user-email" class="form-control" placeholder="Email">
+                  </div>
+                  <input name="reset" id="reset_password" class="btn btn-block login-btn mb-4" type="button" value="Xác nhận">
+                </form>
+                </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </main>
 `
