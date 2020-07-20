@@ -1,15 +1,13 @@
+function openForm() {
+	document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+	document.getElementById("myForm").style.display = "none";
+  }
 
-			AOS.init({
-				easing: 'ease-out-back',
-				duration: 1000
-			});
-
-        
-			hljs.initHighlightingOnLoad();
-
-			$('.hero__scroll').on('click', function(e) {
-				$('html, body').animate({
-					scrollTop: $(window).height()
-				}, 1200);
-			});
-		
+  function contact(){
+	  alert("Hotline: 0962506402")
+  }
+    
+ 

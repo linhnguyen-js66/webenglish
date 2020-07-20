@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/login.css">
-    <link rel = "stylesheet" href="./css/efun.css">
+    <!-- <link rel="stylesheet" href="./css/efun.css"> -->
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -16,8 +17,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    
-    <link rel = "stylesheet" href="./css/main.css">
+
+    <link rel="stylesheet" href="./css/main.css">
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
@@ -26,36 +27,48 @@
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
-
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script> -->
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
     <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyA8D3BT4Oi_h_ToTAN0prCDPhEJYkTF_F8",
-        authDomain: "clone-sign-in---sign-up.firebaseapp.com",
-        databaseURL: "https://clone-sign-in---sign-up.firebaseio.com",
-        projectId: "clone-sign-in---sign-up",
-        storageBucket: "clone-sign-in---sign-up.appspot.com",
-        messagingSenderId: "351609618219",
-        appId: "1:351609618219:web:9a3a6cdffcd8ab85574f6e",
-        measurementId: "G-HGSV4T60JR"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA8D3BT4Oi_h_ToTAN0prCDPhEJYkTF_F8",
+            authDomain: "clone-sign-in---sign-up.firebaseapp.com",
+            databaseURL: "https://clone-sign-in---sign-up.firebaseio.com",
+            projectId: "clone-sign-in---sign-up",
+            storageBucket: "clone-sign-in---sign-up.appspot.com",
+            messagingSenderId: "351609618219",
+            appId: "1:351609618219:web:9a3a6cdffcd8ab85574f6e",
+            measurementId: "G-HGSV4T60JR"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    // firebase.analytics();
+
     </script>
 
     <title>EFUN ENGLISH</title>
     <script src="./js/utils.js"></script>
     <script src="./js/components.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/model.js"></script>
     <script src="./js/view.js"></script>
     <script src="./js/controller.js"></script>
+
+    <script src="./js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="path/to/chartjs/dist/Chart.min.css"> -->
 </head>
+
 <body>
-  <article id="home-page">
-  
-  </article>
-  <script src="./js/counter.js"></script>
+    <article id="home-page">
+
+    </article>
+    <script src="./js/counter.js"></script>
+
+    <script src="./js/aos.js"></script>
+
 </body>
+
 </html>

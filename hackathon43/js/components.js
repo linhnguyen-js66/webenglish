@@ -56,7 +56,7 @@ components.signUp = `
 `
 
 components.signIn = `
-<div class="container" id="sign-in-container">
+<div class="container" id="sign-in-container" style="margin-top: 5%">
     <div class="card login-card">
         <div class="row no-gutters">
             <div class="col-md-5">
@@ -94,7 +94,6 @@ components.signIn = `
     </div>
 </div>
 `
-
 components.homePage = `
 <div id="home-page-content">
     <!--Navbar -->
@@ -106,13 +105,11 @@ components.homePage = `
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
             <ul class="navbar-nav ml-auto nav-flex-icons">
-                <li class="nav-item active">
-                <a class="nav-link" id="home-page-container" href="#home" style="color: orange !important;">TRANG CHỦ
-                    <span class="sr-only">(current)</span>
-                </a>
+                <li class="nav-item">
+                <a class="nav-link" href="#home" id="home-page-container"style="color: orange !important;">TRANG CHỦ</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" id="efun-house-link" href="#EFUN">EFUN<i class="fas fa-star" style="color:red !important;"></i></a>
+                <a class="nav-link" href="#EFUN">EFUN <i class="fas fa-star" style="color:red !important;"></i></a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#IDOLS">IDOLS</a>
@@ -120,7 +117,7 @@ components.homePage = `
                 <li class="nav-item">
                 <a class="nav-link" href="#">BLOGS</a>
                 </li>
-                <button class="btn btn-link" id="sign-up-link" type="button">HỌC MIỄN PHÍ</button>
+                <button class="btn btn-link" id="sign-up-link" type="button" onclick="#">HỌC MIỄN PHÍ</button>
                 
             </ul>
         </div>
@@ -257,8 +254,8 @@ components.homePage = `
             <span>Co-Founder</span>
         </div>
         <div class="col-md-4 col-6 mt-5">
-            <img alt="Phuong pham" style="width:128px" class="rounded-circle" src="./img/phuong.jpg">
-            <h5 class="pos mt-4">Nguyễn Huy Hiếu</h5>
+            <img alt="Phuong pham" style="width:128px" class="rounded-circle" src="./img/phuongpham.jpg">
+            <h5 class="pos mt-4">Phương Phạm</h5>
             <span>Co-Founder</span>
         </div>
         <div class="col-md-4 col-6 mt-5">
@@ -385,7 +382,7 @@ components.homePage = `
 components.efunHouse = `
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
-    <a class="navbar-brand back-to-home-page" href="#"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <a class="navbar-brand back-to-home-page" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
       aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon bg-dark"></span>
@@ -393,19 +390,13 @@ components.efunHouse = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          <a class="nav-link" href="#" id="efun-house">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#course">KHÓA HỌC</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#baigiang">BÀI GIẢNG</a>
-          </li>  -->
           <li class="nav-item">
-            <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
+            <a class="nav-link study-page" href="#" id="study-page">LUYỆN TẬP</a>
           </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">BLOGS</a>
+          <a class="nav-link blog-page" href="#" id="blogs-page">BLOGS</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -616,6 +607,9 @@ components.efunHouse = `
                   </span>
              </div>
              <div class="card-body" style="min-height:465px;">
+                <canvas id="myChart" class="charts">
+                    
+                </canvas>
             </div>
             
          </div>
@@ -873,15 +867,70 @@ components.efunHouse = `
  </section>
  
  <section class="container">
-     <div class="row row justify-content-md-center">
+     <div class="row row justify-content-lg-center">
         <div class="col-md-6">
-            <button  class="btn btn-link video" type="button">XEM THÊM</button>
+            <button  class="btn btn-linkvideo" type="button">XEM THÊM</button>
         </div>
          
      </div>
      
  </section>
-    
+ 
+ <section class="container">
+        <img class="open-button" onclick="openForm()" src="./img/chat.webp" width="100">
+        <img class="contact-button" src="./img/contact.png" width="130" onclick="contact()">
+        <img class="facebook-button" src="./img/facebook.png" width="100" onclick="window.location.href='https://www.facebook.com/tienganhquocte.EFun/'">
+        <div class="form-popup" id="myForm">
+        <div class="form-container">
+            <img src="./img/close.png" alt="" width="50" onclick="closeForm()">
+            <div class="d-flex flex-row justify-content-between">
+                <div class="p-2 aside-left">
+                    <div class="title">CHAT</div>
+
+                    <form id="form-add-conversation" class="form-add-conversation">
+                        <div class="input-wrapper">
+                            <label for="title"><i class="fa fa-comment" aria-hidden="true"></i></label>
+                            <input type="text" name="title" id="title">
+                        </div>
+                        <div class="message-error" id="title-error"></div>
+                        
+                        <div class="input-wrapper">
+                        <label for="friend-email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                        <input type="text" name="friendEmail" id="friend-email">
+                        </div>
+                        <div class="message-error" id="friend-email-error"></div>
+                
+                        <button class="btn-primary">Add</button>
+                    </form>
+                
+                    <div id="conversations-list" class="conversations-list">
+                        <div class="conversation">
+                            <p class="conversation-title">Conversation 1</p>
+                            <p class="conversation-members">2 members</p>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="p-2 chat-container">
+                <div class="conversation-detail">
+                <div id="current-conversation-members" class="conversation-members"></div>
+                </div>
+                    <div class="title"><span id="current-conversation-title"></span> </div>
+
+                    <div id="messages-list" class="messages-list"></div>
+                
+                    <form id="form-add-message" class="form-add-message">
+                        <div class="input-wrapper">
+                            <input type="text" name="messageContent">
+                        </div>
+                        <button class="btn-primary">Send</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
    <!-- Footer -->
 <footer class="page-footer font-small special-color-dark">
@@ -949,7 +998,7 @@ components.userInformation = `
               <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
             </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">BLOGS</a>
+            <a class="nav-link blog-page" href="#">BLOGS</a>
           </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -964,8 +1013,7 @@ components.userInformation = `
   <!--/.Navbar -->
   <h2 style="margin-top:2%; text-align: center;">CẬP NHẬT THÔNG TIN</h2>
   <section class="container" style="margin-top:3%;">
-      <button class="btn-back back-to-efun" >Quay về khóa học
-        <i class="fas fa-caret-right" style="color:white !important;"></i></button>
+ 
       <h5 class="title-header pt-4"><i class="far fa-user"></i> CÁ NHÂN</h5>
       <div class="row pt-4">
         <div class="col-sm-6">
@@ -1106,12 +1154,66 @@ components.userInformation = `
         </div>
       </div>
   </section>
-`
+  <section class="container">
+        <img class="open-button" onclick="openForm()" src="./img/chat.webp" width="100">
+        <img class="contact-button" src="./img/contact.png" width="130" onclick="contact()">
+        <img class="facebook-button" src="./img/facebook.png" width="100" onclick="window.location.href='https://www.facebook.com/tienganhquocte.EFun/'">
+        <div class="form-popup" id="myForm">
+        <div class="form-container">
+            <img src="./img/close.png" alt="" width="50" onclick="closeForm()">
+            <div class="d-flex flex-row justify-content-between">
+                <div class="p-2 aside-left">
+                    <div class="title">CHAT</div>
 
+                    <form id="form-add-conversation" class="form-add-conversation">
+                        <div class="input-wrapper">
+                            <label for="title"><i class="fa fa-comment" aria-hidden="true"></i></label>
+                            <input type="text" name="title" id="title">
+                        </div>
+                        <div class="message-error" id="title-error"></div>
+                        
+                        <div class="input-wrapper">
+                        <label for="friend-email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                        <input type="text" name="friendEmail" id="friend-email">
+                        </div>
+                        <div class="message-error" id="friend-email-error"></div>
+                
+                        <button class="btn-primary">Add</button>
+                    </form>
+                
+                    <div id="conversations-list" class="conversations-list">
+                        <div class="conversation">
+                            <p class="conversation-title">Conversation 1</p>
+                            <p class="conversation-members">2 members</p>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="p-2 chat-container">
+                <div class="conversation-detail">
+                <div id="current-conversation-members" class="conversation-members"></div>
+                </div>
+                    <div class="title"><span id="current-conversation-title"></span> </div>
+
+                    <div id="messages-list" class="messages-list"></div>
+                
+                    <form id="form-add-message" class="form-add-message">
+                        <div class="input-wrapper">
+                            <input type="text" name="messageContent">
+                        </div>
+                        <button class="btn-primary">Send</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+`
 components.studyPage = `
-<!--Navbar -->
+    <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
-    <a class="navbar-brand back-to-home-page" href="#"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <a class="navbar-brand back-to-home-page" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
       aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon bg-dark"></span>
@@ -1121,22 +1223,190 @@ components.studyPage = `
         <li class="nav-item">
           <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#course">KHÓA HỌC</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#baigiang">BÀI GIẢNG</a>
-          </li>  -->
+
           <li class="nav-item">
-            <a class="nav-link" href="#">LUYỆN TẬP</a>
+            <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
           </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">BLOGS</a>
+          <a class="nav-link blog-page" href="#">BLOGS</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item"><a class="navbar-avataruser" id="user-profile" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+      <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
            
+        
+      <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
+       
+      </ul>
+    </div>
+  </nav>
+  <!--/.Navbar -->
+  <section class="container">
+  <button class="btn btn-youtube" style="background-color:#1ab2ff;margin-top:3%;">&#127817; Xem các bài giảng</button>
+</section>
+<section class="container">
+  <div class="row pt-4">
+    <div class="col-sm-4">
+      <div class="card card-default">
+        <div class="card-header">
+          <div class="card-title text-first" style="width:100%">IELTS TEST 1</div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-body">
+            <img src="./img/gif1.gif" alt="gif gif" width="200" class="img-center" onmouseenter="bigImge(this)"
+              onmouseleave="normalImge(this)">
+            <img src="./img/gif2.gif" alt="gif gif" width="200" class="img-another-center" id="move"
+              style="display:none;">
+          </div>
+          <h5>Bài làm số 1</h5>
+          <p>
+            Thời gian làm bài: 3 phút
+          </p>
+          <p style="color:gray!important;">
+            Các thầy cô giáo tham gia biên soạn đề thi là những người có trình độ chuyên môn cao, 
+            có phương pháp sư phạm bài bản,có hiểu biết sâu sắc về môn học, lĩnh vực mà các thầy 
+            cô biên soạn và giảng dạy.
+          </p>
+          <button class="btn btn-click" id="click-listen-one">Làm bài</button>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card card-default">
+        <div class="card-header">
+          <div class="card-title text-first" style="width:100%">IELTS TEST 2</div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-body">
+            <img src="./img/gif3.gif" alt="gif gif" width="190"height="186" class="img-center" onmouseenter="bigImg(this)"
+              onmouseleave="normalImg(this)">
+            <img src="./img/gif4.gif" alt="gif gif" width="190" height="186" class="img-another-center" id="move2"
+              style="display:none;">
+          </div>
+          <h5>Bài làm số 2</h5>
+          <p>
+            Thời gian làm bài: 3 phút
+          </p>
+          <p style="color:gray!important;">
+            Các thầy cô giáo tham gia biên soạn đề thi là những người có trình độ chuyên môn cao, 
+            có phương pháp sư phạm bài bản,có hiểu biết sâu sắc về môn học, lĩnh vực mà các thầy 
+            cô biên soạn và giảng dạy.
+          </p>
+          <button class="btn btn-click" id="click-listen-two" >Làm bài</button>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card card-default">
+        <div class="card-header">
+          <div class="card-title text-first" style="width:100%">IELTS TEST 3</div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-body">
+            <img src="./img/gif5.gif" alt="gif gif" width="190" height="185" class="img-center" onmouseenter="bigImgg(this)"
+              onmouseleave="normalImgg(this)">
+            <img src="./img/gif6.gif" alt="gif gif" width="190" height="185" class="img-another-center" id="move3"
+              style="display:none;">
+          </div>
+          <h5>Bài làm số 3</h5>
+          <p>
+            Thời gian làm bài: 3 phút
+          </p>
+          <p style="color:gray!important;">
+            Các thầy cô giáo tham gia biên soạn đề thi là những người có trình độ chuyên môn cao, 
+            có phương pháp sư phạm bài bản,có hiểu biết sâu sắc về môn học, lĩnh vực mà các thầy 
+            cô biên soạn và giảng dạy.
+          </p>
+          <button class="btn btn-click" id="click-listen-three" >Làm bài</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="container">
+  <img class="open-button" onclick="openForm()" src="./img/chat.webp" width="100">
+  <img class="contact-button" src="./img/contact.png" width="130" onclick="contact()">
+  <img class="facebook-button" src="./img/facebook.png" width="100" onclick="window.location.href='https://www.facebook.com/tienganhquocte.EFun/'">
+  <div class="form-popup" id="myForm">
+  <div class="form-container">
+      <img src="./img/close.png" alt="" width="50" onclick="closeForm()">
+      <div class="d-flex flex-row justify-content-between">
+          <div class="p-2 aside-left">
+              <div class="title">CHAT</div>
+
+              <form id="form-add-conversation" class="form-add-conversation">
+                  <div class="input-wrapper">
+                      <label for="title"><i class="fa fa-comment" aria-hidden="true"></i></label>
+                      <input type="text" name="title" id="title">
+                  </div>
+                  <div class="message-error" id="title-error"></div>
+                  
+                  <div class="input-wrapper">
+                  <label for="friend-email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                  <input type="text" name="friendEmail" id="friend-email">
+                  </div>
+                  <div class="message-error" id="friend-email-error"></div>
+          
+                  <button class="btn-primary">Add</button>
+              </form>
+          
+              <div id="conversations-list" class="conversations-list">
+                  <div class="conversation">
+                      <p class="conversation-title">Conversation 1</p>
+                      <p class="conversation-members">2 members</p>
+                  </div>
+              </div>
+          
+          </div>
+          <div class="p-2 chat-container">
+          <div class="conversation-detail">
+          <div id="current-conversation-members" class="conversation-members"></div>
+          </div>
+              <div class="title"><span id="current-conversation-title"></span> </div>
+
+              <div id="messages-list" class="messages-list"></div>
+          
+              <form id="form-add-message" class="form-add-message">
+                  <div class="input-wrapper">
+                      <input type="text" name="messageContent">
+                  </div>
+                  <button class="btn-primary">Send</button>
+              </form>
+          </div>
+      </div>
+  </div>
+  </div>
+</section>
+`
+
+components.blogs = `
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
+    <a class="navbar-brand back-to-home-page" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link study-page" href="#" id="study-page">LUYỆN TẬP</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link blog-page" href="#" id="blogs-page">BLOGS</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item" id="user-information"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
         
            <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
@@ -1144,288 +1414,204 @@ components.studyPage = `
     </div>
   </nav>
   <!--/.Navbar -->
-  <section class="container">
-    <div class="row pt-4">
-        <div class="col-sm-4">
-            <div class="card card-default">
-                <div class="card-header">
-                    <div class="card-title">
-                         Số điểm tích lũy 
-                    </div>
+
+        <section class="container" style="margin-top:5%;">  
+            <h1 class="text-header">EFUN ENGLISH'S BLOGS &#127849;</h1>
+       <div class="row justify-content-center content-blog">
+           
+          <h2 class="text-head pt-4" style="color:tomato !important;">Khi não trái ngừng hoạt động ?</h2>
+       <div class="content-all">         
+           <p class="text-body">
+                    Trong bài chia sẻ tuần này, Tiếng Anh Mỗi Ngày muốn giới thiệu đến bạn một Ted video của tác giả Jill Taylor.
+                    Đây là một video chia sẻ về trải nghiệm của tác giả, một nhà khoa học nghiên cứu về não bộ, khi bị đột quỵ (stroke).&nbsp;
+                </p>
+                <p>
+                    <img alt="" style="display: block; width: 620px; max-width: 100%; margin: 30px auto; text-align: center;" src="./img/brain.webp">
+                </p>
+               <p>
+                   Trải nghiệm đó lần đâu tiên cho tác giả tự mình cảm nhận được vận hành của bộ não và các tế bào ngay trên bản thân mình. 
+                Và trải nghiệm này cũng tình cờ giúp tác giả nhận ra một bài học rất thú vị:  
+                <em>
+                về cách để giúp chúng ta có thể sống một cách hòa bình và kết nối hơn với thế giới xung quanh.
+               </em>
+               </p> 
+           </div>
+
+              
+       </div>
+       <div class="row justify-content-center content-blog">
+        <h2 class="text-head pt-4" style="color:tomato !important;">Cách học IELTS hiệu quả</h2>
+        <div class="content-all">         
+            <div class="text-body">
+                <h5>
+                    I. Tìm hiểu kỹ về IELTS
+                </h5> 
+            </div>
+                <p>
+                    Trước khi bắt đầu một cái gì, hãy tìm hiểu kỹ về nó. Các bạn cần tìm hiểu những thông tin liên quan đến kỳ thi từ cấu trúc bài thi, thang điểm… 
+                    để chắc chắn mình biết được IELTS là gì mà theo đuổi nhé! Nếu đã tìm hiểu kỹ về IELTS rồi thì các bạn có thể bỏ qua nha.
+                </p> 
+                <p>
+                    IELTS là kỳ thi đánh giá năng lực sử dụng tiếng Anh được tổ chức bởi Hội Đồng Anh (BC), tổ chức giáo dục quốc tế IDP, 
+                    Cambridge Assessment English. IELTS có cấu trúc là 4 phần thi, tổng thời gian gần 3 tiếng. 
+                    4 bài thi là Listening (4 sections), Reading ( 3 paragraphs), Writing (2 tasks) và Speaking ( 3 parts).
+                </p>
+                <div class="text-body">
+                <h5>
+                    II. Thi thử trước để xác định trình độ
+                    
+                </h5> 
+                    
                 </div>
-                <div class="card-body">
-                        <div class="d-flex flex-row justify-content-around">
-                            <div class="p-2 card-on">
-                                  100
+                <p>
+                    Một điều mà chắc chắn bạn phải làm là nên thi thử trước để biết được trình độ của mình ở đâu.
+                     Thi thử cũng giúp bạn làm quen với format đề thi để từ đó dễ dàng hơn cho việc học tập về sau. 
+                     Bạn có thể thi thử online trên các trang trực tuyến như: </p>
+
+                <p> 1. IELTSonlinetests (<a>http://ieltsonlinetests.com/</a>) </p>
+
+                <p> 2. IELTS Exam (<a>https://www.ielts-exam.net/</a>) </p>
+
+                 <p>3. IELTSbuddy (<a>http://www.ieltsbuddy.com/</a>)</p>
+
+                 <p>4. IELTSforfree (<a>https://ieltsforfree.com/</a>)</p>
+                 <p>
+                     <img src="./img/ielts.png" alt="" style="display: block; width: 720px; max-width: 100%; margin: 30px auto; text-align: center;">
+                 </p>
+                 <div class="text-body">
+                    <h5>
+                        III. Xác định mục tiêu và lập kế hoạch luyện thi IELTS
+                        
+                    </h5> 
+                        <p>
+                            Bạn phải chắc chắn xác định một điều, mục tiêu bạn hướng đến là gì?  Sau khi thi thử, bạn đang ở trình độ nào và muốn hướng tới bao nhiêu?
+                             Điều này sẽ giúp bạn lập kế hoạch phù hợp hơn. Với những ai điểm IELTS còn kém,
+                             muốn đạt được mức điểm cao như người khác thì phải nỗ lực hơn nhiều. Quan trọng của tự học chính là học chăm chỉ đấy.
+                        </p>
+                        <p>
+                            - Thời gian dành để ôn thi mỗi ngày, cụ thể hơn là dành cho mỗi kỹ năng. Khi đã đặt ra thời gian thì bạn cần thực hiện đầy đủ, 
+                            nếu hôm nay không học thì ngày mai phải học bù. Mỗi người một thời gian biểu do đó phải cố gắng để sắp xếp thời gian cho ôn luyện phù hợp.
+                        </p>
+                        <p>
+                            - Chuẩn bị sổ và bút cho công cuộc học tập phía trước.
+                        </p>
+                        <p>
+                            - Các cuốn sách học theo giai đoạn của bản thân. Nếu điểm đang thấp thì các bạn cần chọn loại sách phù hợp, 
+                            sách cơ bản chứ không học theo tràn lan các tài liệu nhé. 
+                            Khi đã có nền tảng khá hơn thì bạn sẽ dễ tham khảo và quyết định chọn tài liệu hợp cho mình hơn nha.
+                        </p>
+                        <p>
+                            - Tìm kiếm các kênh học tập phù hợp với bản thân. Phổ biến nhất là kênh Youtube hoặc các kênh tự học IELTS online. 
+                            Những kênh nước ngoài như IELTS Simon, IELTS Advantace là những kênh nên theo dõi. Nếu chưa hiểu hết các bài học bằng tiếng Anh,
+                             các bạn có thể tham khảo những bài dạy online từ IELTS Fighter dành cho người mới bắt đầu từ 0 - 5.0 và từ 5.0 - 6.5 nhé! 
+                        </p>
+                    </div>
+            </div>
+       </div>
+        </section>
+        <section class="container">
+            <img class="open-button" onclick="openForm()" src="./img/chat.webp" width="100">
+            <img class="contact-button" src="./img/contact.png" width="130" onclick="contact()">
+            <img class="facebook-button" src="./img/facebook.png" width="100" onclick="window.location.href='https://www.facebook.com/tienganhquocte.EFun/'">
+            <div class="form-popup" id="myForm">
+            <div class="form-container">
+                <img src="./img/close.png" alt="" width="50" onclick="closeForm()">
+                <div class="d-flex flex-row justify-content-between">
+                    <div class="p-2 aside-left">
+                        <div class="title">CHAT</div>
+    
+                        <form id="form-add-conversation" class="form-add-conversation">
+                            <div class="input-wrapper">
+                                <label for="title"><i class="fa fa-comment" aria-hidden="true"></i></label>
+                                <input type="text" name="title" id="title">
                             </div>
-                            <div class="p-2 card-under">
-                                  20 xu  <span style="font-size:30px;">&#128176;</span>
+                            <div class="message-error" id="title-error"></div>
+                            
+                            <div class="input-wrapper">
+                            <label for="friend-email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                            <input type="text" name="friendEmail" id="friend-email">
+                            </div>
+                            <div class="message-error" id="friend-email-error"></div>
+                    
+                            <button class="btn-primary">Add</button>
+                        </form>
+                    
+                        <div id="conversations-list" class="conversations-list">
+                            <div class="conversation">
+                                <p class="conversation-title">Conversation 1</p>
+                                <p class="conversation-members">2 members</p>
                             </div>
                         </div>
+                    
+                    </div>
+                    <div class="p-2 chat-container">
+                    <div class="conversation-detail">
+                    <div id="current-conversation-members" class="conversation-members"></div>
+                    </div>
+                        <div class="title"><span id="current-conversation-title"></span> </div>
+    
+                        <div id="messages-list" class="messages-list"></div>
+                    
+                        <form id="form-add-message" class="form-add-message">
+                            <div class="input-wrapper">
+                                <input type="text" name="messageContent">
+                            </div>
+                            <button class="btn-primary">Send</button>
+                        </form>
+                        
+                    </div>
                 </div>
             </div>
+            </div>
+        </section>
+    
+       <!-- Footer -->
+    <footer class="page-footer font-small special-color-dark">
+        <div class="footer-copyright text-center py-3">
+          <blockquote style="font-size:30px; font-style: italic; color:gray !important;">"Ngừng học khi ngừng thở"</blockquote>
+          <p style="font-weight: bold;">Ha Linh Nguyen</p>
+          <span>CEO EFUN ENGLISH</span>
         </div>
-        <div class="col-sm-8">
-            <div class="card card-default">
-                <div class="card-header">
-                    <div class="card-title">
-                       <h5>NGHE</h5> 
-                    </div>
-                </div>
-                <div class="card-body card-scroll">
-                        <div class="card-content">
-                          <div class="d-flex flex-row justify-content-between">
-                            <div class="p-2">
-                            <h5 class="content-header">IELTS Listening test 1</h5>
-                            <p>Update 5/7/2020</p>
-                            </div>
-                            <div class="p-2">
-                              <button>click</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-content">
-                          <div class="d-flex flex-row justify-content-between">
-                            <div class="p-2">
-                            <h5 class="content-header">IELTS Listening test 1</h5>
-                            <p>Update 5/7/2020</p>
-                            </div>
-                            <div class="p-2">
-                              <button>click</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-content">
-                          <div class="d-flex flex-row justify-content-between">
-                            <div class="p-2">
-                            <h5 class="content-header">IELTS Listening test 1</h5>
-                            <p>Update 5/7/2020</p>
-                            </div>
-                            <div class="p-2">
-                              <button>click</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-content">
-                          <div class="d-flex flex-row justify-content-between">
-                            <div class="p-2">
-                            <h5 class="content-header">IELTS Listening test 1</h5>
-                            <p>Update 5/7/2020</p>
-                            </div>
-                            <div class="p-2">
-                              <button>click</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-content">
-                          <div class="d-flex flex-row justify-content-between">
-                            <div class="p-2">
-                            <h5 class="content-header">IELTS Listening test 1</h5>
-                            <p>Update 5/7/2020</p>
-                            </div>
-                            <div class="p-2">
-                              <button>click</button>
-                            </div>
-                          </div>
-                        </div>
-                </div>
-            </div>
-            <div class="card card-default">
-              <div class="card-header">
-                  <div class="card-title">
-                     <h5>NÓI</h5> 
-                  </div>
-              </div>
-              <div class="card-body card-scroll">
-                      <div class="card-content">
-                        <div class="d-flex flex-row justify-content-between">
-                          <div class="p-2">
-                          <h5 class="content-header">IELTS Speaking test 1</h5>
-                          <p>Update 5/7/2020</p>
-                          </div>
-                          <div class="p-2">
-                            <button>click</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-content">
-                        <div class="d-flex flex-row justify-content-between">
-                          <div class="p-2">
-                          <h5 class="content-header">IELTS Speaking test 1</h5>
-                          <p>Update 5/7/2020</p>
-                          </div>
-                          <div class="p-2">
-                            <button>click</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-content">
-                        <div class="d-flex flex-row justify-content-between">
-                          <div class="p-2">
-                          <h5 class="content-header">IELTS Speaking test 1</h5>
-                          <p>Update 5/7/2020</p>
-                          </div>
-                          <div class="p-2">
-                            <button>click</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-content">
-                        <div class="d-flex flex-row justify-content-between">
-                          <div class="p-2">
-                          <h5 class="content-header">IELTS Speaking test 1</h5>
-                          <p>Update 5/7/2020</p>
-                          </div>
-                          <div class="p-2">
-                            <button>click</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-content">
-                        <div class="d-flex flex-row justify-content-between">
-                          <div class="p-2">
-                          <h5 class="content-header">IELTS Speaking test 1</h5>
-                          <p>Update 5/7/2020</p>
-                          </div>
-                          <div class="p-2">
-                            <button>click</button>
-                          </div>
-                        </div>
-                      </div>
-              </div>
+        <div class="container">
+            <ul class="list-unstyled list-inline text-center">
+              <li class="list-inline-item">
+                <a class="btn-floating btn-fb mx-1">
+                  <i class="fab fa-facebook-f"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-tw mx-1">
+                  <i class="fab fa-twitter"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-gplus mx-1">
+                  <i class="fab fa-google-plus-g"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-li mx-1">
+                  <i class="fab fa-linkedin-in"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-dribbble mx-1">
+                  <i class="fab fa-dribbble"> </i>
+                </a>
+              </li>
+            </ul>
           </div>
-          <div class="card card-default">
-            <div class="card-header">
-                <div class="card-title">
-                   <h5>ĐỌC</h5> 
-                </div>
+          <div class="footer-copyright text-center py-3">
+          <span class="type--fine-print">Made with &nbsp;&nbsp;<span style="font-size: 30px; vertical-align: middle;">⌨️</span>
+                  &nbsp; and &nbsp;
+                  <span style="font-size: 30px; vertical-align: middle;">🙌</span>
+                </span>
             </div>
-            <div class="card-body card-scroll">
-                    <div class="card-content">
-                      <div class="d-flex flex-row justify-content-between">
-                        <div class="p-2">
-                        <h5 class="content-header">IELTS Reading test 1</h5>
-                        <p>Update 5/7/2020</p>
-                        </div>
-                        <div class="p-2">
-                          <button>click</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="d-flex flex-row justify-content-between">
-                        <div class="p-2">
-                        <h5 class="content-header">IELTS Reading test 1</h5>
-                        <p>Update 5/7/2020</p>
-                        </div>
-                        <div class="p-2">
-                          <button>click</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="d-flex flex-row justify-content-between">
-                        <div class="p-2">
-                        <h5 class="content-header">IELTS Reading test 1</h5>
-                        <p>Update 5/7/2020</p>
-                        </div>
-                        <div class="p-2">
-                          <button>click</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="d-flex flex-row justify-content-between">
-                        <div class="p-2">
-                        <h5 class="content-header">IELTS Reading test 1</h5>
-                        <p>Update 5/7/2020</p>
-                        </div>
-                        <div class="p-2">
-                          <button>click</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="d-flex flex-row justify-content-between">
-                        <div class="p-2">
-                        <h5 class="content-header">IELTS Reading test 1</h5>
-                        <p>Update 5/7/2020</p>
-                        </div>
-                        <div class="p-2">
-                          <button>click</button>
-                        </div>
-                      </div>
-                    </div>
-            </div>
-        </div>
-        <div class="card card-default">
-          <div class="card-header">
-              <div class="card-title">
-                 <h5>VIẾT</h5> 
-              </div>
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/">EFUN ENGLISH</a>
           </div>
-          <div class="card-body card-scroll">
-                  <div class="card-content">
-                    <div class="d-flex flex-row justify-content-between">
-                      <div class="p-2">
-                      <h5 class="content-header">IELTS Writting test 1</h5>
-                      <p>Update 5/7/2020</p>
-                      </div>
-                      <div class="p-2">
-                        <button>click</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-content">
-                    <div class="d-flex flex-row justify-content-between">
-                      <div class="p-2">
-                      <h5 class="content-header">IELTS Writting test 1</h5>
-                      <p>Update 5/7/2020</p>
-                      </div>
-                      <div class="p-2">
-                        <button>click</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-content">
-                    <div class="d-flex flex-row justify-content-between">
-                      <div class="p-2">
-                      <h5 class="content-header">IELTS Writting test 1</h5>
-                      <p>Update 5/7/2020</p>
-                      </div>
-                      <div class="p-2">
-                        <button>click</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-content">
-                    <div class="d-flex flex-row justify-content-between">
-                      <div class="p-2">
-                      <h5 class="content-header">IELTS Writting test 1</h5>
-                      <p>Update 5/7/2020</p>
-                      </div>
-                      <div class="p-2">
-                        <button>click</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-content">
-                    <div class="d-flex flex-row justify-content-between">
-                      <div class="p-2">
-                      <h5 class="content-header">IELTS Writting test 1</h5>
-                      <p>Update 5/7/2020</p>
-                      </div>
-                      <div class="p-2">
-                        <button>click</button>
-                      </div>
-                    </div>
-                  </div>
-          </div>
-      </div>
-        </div>
-        
-    </div>
-  </section>
+         </footer>
+        <!-- Footer -->
 `
 
 components.forgotPassword = `
@@ -1442,15 +1628,12 @@ components.forgotPassword = `
                 <img src="./img/logoefun.png" alt="logo" class="logo">
               </div>
               <p class="login-card-description">QUÊN MẬT KHẨU &#128542;</p>
-              <form action="#!" id="forgot-password-form">
+              <form action="#!">
                   <div class="form-group mb-4">
                     <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="register-email" class="form-control" placeholder="Email">
-                    <div class="message-error" id="email-error"></div>
+                    <input type="email" name="email" id="user-email" class="form-control" placeholder="Email">
                   </div>
-                  <button name="reset" id="reset-password-btn" class="btn btn-block login-btn mb-4">Xác nhận</button>
-                  <div class="message-success" id="reset-password-success"></div>
-                  <div class="message-error" id="reset-password-error"></div>
+                  <input name="reset" id="reset_password" class="btn btn-block login-btn mb-4" type="button" value="Xác nhận">
                 </form>
                 </nav>
             </div>
@@ -1460,4 +1643,262 @@ components.forgotPassword = `
       
     </div>
   </main>
+`
+components.stN1 = `
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
+    <a class="navbar-brand back-to-home-page" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+        </li>
+
+          <li class="nav-item">
+            <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link blog-page" href="#">BLOGS</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+           
+        
+      <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
+       
+      </ul>
+    </div>
+  </nav>
+  <!-- /.Navbar --> 
+<div class="container game-container">
+        <div id="game">
+            <div id="hud" class="d-flex flex-row justify-content-between">
+                <div class="p-2" id="hud-item">
+                    <p id="progressText" class="hud-prefix">
+                        Question
+                    </p>
+                 <div id="progressBar">
+                     <div id="progressBarFull"></div>
+                 </div>
+                </div>
+                <div class="p-2"  id="hud-item">
+                    <p class="hud-prefix">
+                        Time
+                    </p>
+                    <h1 class="hud-main-text" id="time">
+                        <div><span id="time"></span></div>
+                    </h1>
+                </div>
+                <div class="p-2"  id="hud-item">
+                    <p class="hud-prefix">
+                        Score
+                    </p>
+                    <h1 class="hud-main-text" id="score">
+                        0
+                    </h1>
+                </div>
+            </div>
+            <audio controls>
+                <source src="" type="audio/ogg">
+              </audio>
+            <h2 id="question"></h2>
+            <div class="question-body"> 
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">A</p>
+                    <p class="p-2 choice-text" data-number="1">Choice 1</p>
+                </div>
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">B</p>
+                    <p class="p-2 choice-text" data-number="2">Choice 2</p>
+                </div>
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">C</p>
+                    <p class="p-2 choice-text" data-number="3">Choice 3</p>
+                </div>
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">D</p>
+                    <p class="p-2 choice-text" data-number="4">Choice 4</p>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+`
+components.stN2 = `
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
+    <a class="navbar-brand back-to-home-page" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+        </li>
+
+          <li class="nav-item">
+            <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link blog-page" href="#">BLOGS</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+           
+        
+      <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
+       
+      </ul>
+    </div>
+  </nav>
+  <!-- /.Navbar --> 
+<div class="container game-container">
+        <div id="game">
+            <div id="hud" class="d-flex flex-row justify-content-between">
+                <div class="p-2" id="hud-item">
+                    <p id="progressText" class="hud-prefix">
+                        Question
+                    </p>
+                 <div id="progressBar">
+                     <div id="progressBarFull"></div>
+                 </div>
+                </div>
+                <div class="p-2"  id="hud-item">
+                    <p class="hud-prefix">
+                        Time
+                    </p>
+                    <h1 class="hud-main-text" id="time">
+                        <div><span id="time"></span></div>
+                    </h1>
+                </div>
+                <div class="p-2"  id="hud-item">
+                    <p class="hud-prefix">
+                        Score
+                    </p>
+                    <h1 class="hud-main-text" id="score">
+                        0
+                    </h1>
+                </div>
+            </div>
+            <audio controls>
+                <source src="" type="audio/ogg">
+              </audio>
+            <h2 id="question"></h2>
+            <div class="question-body"> 
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">A</p>
+                    <p class="p-2 choice-text" data-number="1">Choice 1</p>
+                </div>
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">B</p>
+                    <p class="p-2 choice-text" data-number="2">Choice 2</p>
+                </div>
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">C</p>
+                    <p class="p-2 choice-text" data-number="3">Choice 3</p>
+                </div>
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">D</p>
+                    <p class="p-2 choice-text" data-number="4">Choice 4</p>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+`
+components.stN3 = `
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
+    <a class="navbar-brand back-to-home-page" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+        </li>
+
+          <li class="nav-item">
+            <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link blog-page" href="#">BLOGS</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+           
+        
+      <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
+       
+      </ul>
+    </div>
+  </nav>
+  <!-- /.Navbar --> 
+<div class="container game-container">
+        <div id="game">
+            <div id="hud" class="d-flex flex-row justify-content-between">
+                <div class="p-2" id="hud-item">
+                    <p id="progressText" class="hud-prefix">
+                        Question
+                    </p>
+                 <div id="progressBar">
+                     <div id="progressBarFull"></div>
+                 </div>
+                </div>
+                <div class="p-2"  id="hud-item">
+                    <p class="hud-prefix">
+                        Time
+                    </p>
+                    <h1 class="hud-main-text" id="time">
+                        <div><span id="time"></span></div>
+                    </h1>
+                </div>
+                <div class="p-2"  id="hud-item">
+                    <p class="hud-prefix">
+                        Score
+                    </p>
+                    <h1 class="hud-main-text" id="score">
+                        0
+                    </h1>
+                </div>
+            </div>
+            <audio controls>
+                <source src="" type="audio/ogg">
+              </audio>
+            <h2 id="question"></h2>
+            <div class="question-body"> 
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">A</p>
+                    <p class="p-2 choice-text" data-number="1">Choice 1</p>
+                </div>
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">B</p>
+                    <p class="p-2 choice-text" data-number="2">Choice 2</p>
+                </div>
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">C</p>
+                    <p class="p-2 choice-text" data-number="3">Choice 3</p>
+                </div>
+                <div class="choice-container d-flex flex-row">
+                    <p class="p-2 choice-prefix">D</p>
+                    <p class="p-2 choice-text" data-number="4">Choice 4</p>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
 `
