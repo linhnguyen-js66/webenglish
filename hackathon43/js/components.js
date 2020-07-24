@@ -115,7 +115,7 @@ components.homePage = `
                 <a class="nav-link" href="#IDOLS">IDOLS</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">BLOGS</a>
+                <a class="nav-link blogs-link" href="#">BLOGS</a>
                 </li>
                 <button class="btn btn-link" id="sign-up-link" type="button" onclick="#">HỌC MIỄN PHÍ</button>
                 
@@ -382,7 +382,7 @@ components.homePage = `
 components.efunHouse = `
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
-    <a class="navbar-brand back-to-home-page" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <a class="navbar-brand back-to-home-page" href="#"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
       aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon bg-dark"></span>
@@ -1002,8 +1002,7 @@ components.userInformation = `
           </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
-           
+      <li class="nav-item"><a class="navbar-avataruser" id="user-profile" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>           
         
            <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
@@ -1406,7 +1405,7 @@ components.blogs = `
         </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item" id="user-information"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+        <li class="nav-item user-information" ><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
         
            <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
@@ -1624,16 +1623,19 @@ components.forgotPassword = `
           </div>
           <div class="col-md-7">
             <div class="card-body">
-              <div class="brand-wrapper">
+              <div class="brand-wrapper click-on-logo">
                 <img src="./img/logoefun.png" alt="logo" class="logo">
               </div>
               <p class="login-card-description">QUÊN MẬT KHẨU &#128542;</p>
-              <form action="#!">
+              <form action="#!" id="forgot-password-form">
                   <div class="form-group mb-4">
                     <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="user-email" class="form-control" placeholder="Email">
+                    <input type="email" name="email" id="register-email" class="form-control" placeholder="Email">
                   </div>
-                  <input name="reset" id="reset_password" class="btn btn-block login-btn mb-4" type="button" value="Xác nhận">
+                  <button name="reset" id="reset-password-btn" class="btn btn-block login-btn mb-4">Xác nhận</button>
+                  <div class="message-success" id="reset-password-success"></div>
+                  <div class="message-error" id="reset-password-error"></div>
+                  <div class="message-error" id="email-error"></div>
                 </form>
                 </nav>
             </div>

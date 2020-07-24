@@ -13,6 +13,11 @@ view.showScreen = async function (screenName) {
                 view.showScreen('signUp');
             }
 
+            let blogsLink = document.getElementsByClassName('blogs-link')[0];
+            blogsLink.onclick = function () {
+                view.showScreen('blogs');
+            }
+
             break;
 
         case 'signIn':
@@ -95,7 +100,25 @@ view.showScreen = async function (screenName) {
             break;
         case 'forgotPassword':
             content.innerHTML = components.forgotPassword;
+
+            let clickOnHomePage = document.getElementsByClassName('click-on-logo')[0]; // Take onclick event to home page site
+            clickOnHomePage.onclick = function () {
+                view.showScreen('homePage');
+            }
+
+            let forgotPasswordForm = document.getElementById('forgot-password-form');
+            forgotPasswordForm.onsubmit = function (event){
+                event.preventDefault();
+
+                let registerEmail = document.getElementById('register-email').value;
+                let validateEmailInputted = view.validate(registerEmail != "" && validateEmail(registerEmail) , "email-error", "Invalid Email.");
+                if (validateEmailInputted) {
+                    controller.forgotPassword(registerEmail);
+                }
+            }
+
             break;
+
         case 'efunHouse':
             content.innerHTML = components.efunHouse;
             let BlogPage = document.getElementsByClassName('blog-page')[0];
@@ -119,10 +142,11 @@ view.showScreen = async function (screenName) {
             userName.innerHTML = firebase.auth().currentUser.displayName;
 
             //back to home page
-            let backToHomePage = document.getElementsByClassName('back-to-home-page')[0];
-            backToHomePage.onclick = function () {
-                view.showScreen('homePage');
-            }
+            // let backToHomePage = document.getElementsByClassName('back-to-home-page')[0];
+            // backToHomePage.onclick = function () {
+            //     view.showScreen('homePage');
+                
+            // }
 
             //link to study page
             let studyPage = document.getElementsByClassName('study-page')[0];
@@ -221,6 +245,10 @@ view.showScreen = async function (screenName) {
                 view.showScreen('efunHouse');
             }
 
+            let clickOnProfile = document.getElementById('user-page');
+            clickOnProfile.onclick = function (){
+                view.showScreen('userInformation');
+            }
             //sign out when user click on sign out button
             let clickOnLogOutButton = document.getElementsByClassName('btn-logout')[0];
             clickOnLogOutButton.onclick = function () {
@@ -259,6 +287,14 @@ view.showScreen = async function (screenName) {
             clickOnBackEfun.onclick = function () {
                 view.showScreen('efunHouse');
             }
+
+            let clickOnUserAvatar = document.getElementsByClassName('user-information')[0];
+            clickOnUserAvatar.onclick = function (){
+                view.showScreen('userInformation');
+            }
+
+            let displayNameToConsole = document.getElementsByClassName("display-name")[0];
+            displayNameToConsole.innerHTML = firebase.auth().currentUser.displayName;
 
             //sign out when user click on sign out button
             let clickOnSignOutButton = document.getElementsByClassName('btn-logout')[0];

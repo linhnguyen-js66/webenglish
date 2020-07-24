@@ -61,12 +61,13 @@ body{
 }
 
 .message-error{
-    color: red;
+    color: red !important;
 }
 
 .message-success{
-    color: green;
+    color: green !important;
 }
+
 .btn-linkvideo{
     border: none;
     outline: none;
