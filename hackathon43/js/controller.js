@@ -76,7 +76,7 @@ controller.updateProfileForm = async function (name, email, phoneNumber, birthda
 controller.changePassword = async function (password) {
     let user = firebase.auth().currentUser;
     let newPassword = document.getElementById('input-new-password').value;
-    user.updatePassword(newPassword).then(function () {
+    await user.updatePassword(newPassword).then(function() {
         // Update successful.
         view.setText("submit-password-success", "Your password has been changed.");
         view.setActive("submit-password-btn", false);
@@ -87,6 +87,22 @@ controller.changePassword = async function (password) {
         view.setActive("submit-password-btn", true);
     });
 }
+
+controller.forgotPassword = async function (email) {
+    let auth = firebase.auth();
+    let emailAddress = document.getElementById('register-email').value;
+
+    await auth.sendPasswordResetEmail(emailAddress).then(function() {
+        // Email sent.
+        view.setText("reset-password-success", "Your password has been changed. Check your mail.");
+        view.setActive("reset-password-btn", false);
+    }).catch(function(error) {
+        // An error happened.
+        view.setText("reset-password-error", error.message);
+        view.setActive("reset-password-btn", true);
+    });
+}
+
 controller.loadConversations = async function () {
     let currentEmail = firebase.auth().currentUser.email;
     // load dữ liệu từ firebase
