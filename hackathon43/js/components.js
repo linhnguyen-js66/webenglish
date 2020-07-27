@@ -117,9 +117,8 @@ components.homePage = `
                 <li class="nav-item">
                 <a class="nav-link blogs-link" href="#">BLOGS</a>
                 </li>
-                <button class="btn btn-link" id="sign-up-link" type="button" onclick="#">HỌC MIỄN PHÍ</button>
-                
             </ul>
+            <button class="btn btn-link" id="sign-up-link" type="button" onclick="#">HỌC MIỄN PHÍ</button>
         </div>
     </nav>
     <!--/.Navbar -->
@@ -129,9 +128,57 @@ components.homePage = `
 
     <div class="carousel-inner" role="listbox"> -->
 
-    <div class="view">
-        <img class="d-block w-100" src="./img/cover-web.jpg" alt="LOGO">
+    <div class="container head-part" id="head-part">
+    <div class="d-flex flex-row justify-content-between">
+    <div class="p-2">
+        <div class="carousel-part">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <!-- <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol> -->
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="./mentor.jpg" alt="Los Angeles">
+            </div>
+
+            <div class="item">
+              <img src="./teamwork-1.jpg" alt="Chicago">
+            </div>
+          
+            <div class="item">
+              <img src="./teamwork-5.jpg" alt="New york">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
     </div>
+    <div class="p-2>
+        <div class="enroll-course">
+            <div class="description-part">
+                <span class="title-description">EFUN HỆ THỐNG HỌC IELTS TRỰC TUYẾN</span>
+                <br>
+                <span class="detail-description">Tham gia học và luyện thi IELTS miễn phí để nhận quà</span>
+                <br>
+                <button class="enroll-btn effect"><span>ĐĂNG KÝ HỌC NGAY</span></button>
+            </div>
+        </div>
+    </div>
+
     <div class="container" id="home">
         <section class="section pb-3 text-center">
 
@@ -147,88 +194,88 @@ components.homePage = `
         <div class="row">
 
             <!--Grid column-->
-            <div class="col-lg-4 col-md-12 mb-4">
+            <div class="col-lg-4 col-md-12 mb-4 reason-card">
 
             <!--Card-->
-            <div class="card testimonial-card">
+                <div class="card testimonial-card">
 
-                <!--Background color-->
-                <div class="card-up teal lighten-2">
+                    <!--Background color-->
+                    <div class="card-up teal lighten-2">
+                    </div>
+
+                    <!--Avatar-->
+                    <div class="avatar mx-auto white"><img src="./img/support.jpg" alt="avatar mx-auto white"
+                        class="img-fluid">
+                    </div>
+
+                    <div class="card-body">
+                    <!--Name-->
+                    <h4 class="card-title mt-1">HỖ TRỢ 24/7</h4>
+                    <hr>
+                    <!--Quotation-->
+                    <p> Luôn hỗ trợ người học
+                        một cách nhanh chóng, dễ hiểu</p>
+                    </div>
+
                 </div>
-
-                <!--Avatar-->
-                <div class="avatar mx-auto white"><img src="./img/support.jpg" alt="avatar mx-auto white"
-                    class="img-fluid">
-                </div>
-
-                <div class="card-body">
-                <!--Name-->
-                <h4 class="card-title mt-1">HỖ TRỢ 24/7</h4>
-                <hr>
-                <!--Quotation-->
-                <p> Luôn hỗ trợ người học
-                    một cách nhanh chóng, dễ hiểu</p>
-                </div>
-
-            </div>
             <!--Card-->
 
             </div>
             <!--Grid column-->
-            <div class="col-lg-4 col-md-12 mb-4">
+            <div class="col-lg-4 col-md-12 mb-4 reason-card">
 
+                <!--Card-->
+                <div class="card testimonial-card">
+
+                    <!--Background color-->
+                    <div class="card-up teal lighten-2">
+                    </div>
+
+                    <!--Avatar-->
+                    <div class="avatar mx-auto white"><img src="./img/studyfree.jpg" alt="avatar mx-auto white"
+                        class="img-fluid">
+                    </div>
+
+                    <div class="card-body">
+                    <!--Name-->
+                    <h4 class="card-title mt-1">HỌC MIỄN PHÍ</h4>
+                    <hr>
+                    <!--Quotation-->
+                    <p>Học tập hay luyện thi
+                        hoàn toàn miễn phí với
+                        hàng nghìn đề ôn tập.</p>
+                    </div>
+
+                </div>
             <!--Card-->
-            <div class="card testimonial-card">
-
-                <!--Background color-->
-                <div class="card-up teal lighten-2">
-                </div>
-
-                <!--Avatar-->
-                <div class="avatar mx-auto white"><img src="./img/studyfree.jpg" alt="avatar mx-auto white"
-                    class="img-fluid">
-                </div>
-
-                <div class="card-body">
-                <!--Name-->
-                <h4 class="card-title mt-1">HỌC MIỄN PHÍ</h4>
-                <hr>
-                <!--Quotation-->
-                <p>Học tập hay luyện thi
-                    hoàn toàn miễn phí với
-                    hàng nghìn đề ôn tập.</p>
-                </div>
 
             </div>
-            <!--Card-->
+            <div class="col-lg-4 col-md-12 mb-4 reason-card">
 
-            </div>
-            <div class="col-lg-4 col-md-12 mb-4">
+                <!--Card-->
+                <div class="card testimonial-card">
 
-            <!--Card-->
-            <div class="card testimonial-card">
+                    <!--Background color-->
+                    <div class="card-up teal lighten-2">
+                    </div>
 
-                <!--Background color-->
-                <div class="card-up teal lighten-2">
+                    <!--Avatar-->
+                    <div class="avatar mx-auto white"><img src="./img/lesson.jpg" alt="avatar mx-auto white"
+                        class="img-fluid">
+                    </div>
+
+                    <div class="card-body">
+                    <!--Name-->
+                    <h4 class="card-title mt-1">BÀI GIẢNG CHẤT LƯỢNG</h4>
+                    <hr>
+                    <!--Quotation-->
+                    <p>Cung cấp các bài giảng
+                        liên quan và các skills
+                        quan trọng để làm
+                        bài thi.</p>
+                    </div>
+
                 </div>
-
-                <!--Avatar-->
-                <div class="avatar mx-auto white"><img src="./img/lesson.jpg" alt="avatar mx-auto white"
-                    class="img-fluid">
-                </div>
-
-                <div class="card-body">
-                <!--Name-->
-                <h4 class="card-title mt-1">BÀI GIẢNG CHẤT LƯỢNG</h4>
-                <hr>
-                <!--Quotation-->
-                <p>Cung cấp các bài giảng
-                    liên quan và các skills
-                    quan trọng để làm
-                    bài thi.</p>
-                </div>
-
-            </div>
             <!--Card-->
 
         </div>
@@ -243,39 +290,43 @@ components.homePage = `
         </h1>
         <!--Section description-->
         <div class="row">
-        <div class="col-md-12 col-6 mt-5">
+        <div class="col-md-12 col-6 mt-5 the-face">
             <img alt="Hà Linh" style="width:128px" class="rounded-circle" src="./img/linh.jpg">
-            <h5 class="pos mt-4">Linh Nguyễn</h5>
+            <br>
+            <a class="pos mt-4" href="https://www.facebook.com/messages/t/linh.lun.397/">Linh Nguyễn</a>
+            <br>
             <span>Founder</span>
         </div>
-        <div class="col-md-4 col-6 mt-5">
-            <img alt="Phuong pham" style="width:128px" class="rounded-circle" src="./img/quan.jpg">
-            <h5 class="pos mt-4">Hoàng Văn Hòa</h5>
+        <div class="col-md-4 col-6 mt-5 the-face">
+            <img alt="Hoàng Văn Hòa" style="width:128px" class="rounded-circle" src="./img/quan.jpg">
+            <br>
+            <a class="pos mt-4" href="https://www.facebook.com/messages/t/hoangvanhoa056/">Hoàng Văn Hòa</a>
+            <br>
             <span>Co-Founder</span>
         </div>
-        <div class="col-md-4 col-6 mt-5">
+        <div class="col-md-4 col-6 mt-5 the-face">
             <img alt="Phuong pham" style="width:128px" class="rounded-circle" src="./img/phuongpham.jpg">
             <h5 class="pos mt-4">Phương Phạm</h5>
             <span>Co-Founder</span>
         </div>
-        <div class="col-md-4 col-6 mt-5">
+        <div class="col-md-4 col-6 mt-5 the-face">
             <img alt="Phuong pham" style="width:128px" class="rounded-circle" src="./img/ly.jpg">
             <h5 class="pos mt-4">Nguyễn Phương Ly</h5>
             <span>Employee Experience</span>
         </div>
         </div>
         <div class="row">
-        <div class="col-md-4 col-6 mt-5">
+        <div class="col-md-4 col-6 mt-5 the-face">
             <img alt="Phuong pham" style="width:128px" class="rounded-circle" src="./img/tee.jpg">
             <h5 class="pos mt-4">Nguyễn Thanh Tuấn</h5>
             <span>Developer</span>
         </div>
-        <div class="col-md-4 col-6 mt-5">
+        <div class="col-md-4 col-6 mt-5 the-face">
             <img alt="Phuong pham" style="width:128px" class="rounded-circle" src="./img/tung.jpg">
             <h5 class="pos mt-4">Nguyễn Thanh Tùng</h5>
             <span>Leader Team</span>
         </div>
-        <div class="col-md-4 col-6 mt-5">
+        <div class="col-md-4 col-6 mt-5 the-face">
             <img alt="Phuong pham" style="width:128px" class="rounded-circle" src="./img/son.jpg">
             <h5 class="pos mt-4">Nguyễn Hoàng Sơn</h5>
             <span>IT Administrator</span>
@@ -399,12 +450,11 @@ components.efunHouse = `
           <a class="nav-link blog-page" href="#" id="blogs-page">BLOGS</a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item" id="user-information"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+      <div class="navbar-nav ml-auto nav-flex-icons user-part">
+        <li class="user-infomation" id="user-information"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
         
-           <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
-       
-      </ul>
+        <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
+      </div>
     </div>
   </nav>
   <!--/.Navbar -->
@@ -412,7 +462,7 @@ components.efunHouse = `
   <section class="container " style="margin-top: 2%;">
   <div class="header d-flex flex-row justify-content-between">
     <span class="p-2"><img alt="runrun" src="./img/gif.gif"  width="120"></span>
-    <span class="p-2 align-self-center"><button class="btn btn-test" onclick="window.location.href='luyentap.html'">LÀM BÀI TEST</button></span>
+    <span class="p-2 align-self-center"><button class="btn btn-test" id="doing-test"><span>LÀM BÀI TEST </span></button></span>
     <span class="p-2"><img alt="runrun" src="./img/flag.png" width="70"></span>
   </div>
   <div class="line-race"></div>
@@ -513,7 +563,7 @@ components.efunHouse = `
                      </div>
                  </div>
                  <div class="card-body">
-                     <div class="d-flex">
+                     <div class="d-flex hover-select">
                          <h4 style="width:32px">1</h4>
                         <div class="thumbnail-wrapper d48 circular bordered b-white">
                             <img alt="Nguyễn Văn Phúc" class="rounded-circle" src="https://api.adorable.io/avatars/55/Nguyễn Văn Phúc">
@@ -521,7 +571,7 @@ components.efunHouse = `
                         <p class="ml-2">Nguyễn Văn Phúc</p>
                         <h5 class="ml-auto">2042</h5>
                      </div>
-                     <div class="d-flex pt-3">
+                     <div class="d-flex pt-3 hover-select">
                         <h4 style="width:32px">2</h4>
                        <div class="thumbnail-wrapper d48 circular bordered b-white">
                         <img alt="Phan Quốc Trung" src="https://api.adorable.io/avatars/55/Phan Quốc Trung" class="rounded-circle">
@@ -529,7 +579,7 @@ components.efunHouse = `
                        <p class="ml-2">Phan Quốc Trung</p>
                        <h5 class="ml-auto">2039</h5>
                     </div>
-                    <div class="d-flex pt-3">
+                    <div class="d-flex pt-3 hover-select">
                         <h4 style="width:32px">3</h4>
                        <div class="thumbnail-wrapper d48 circular bordered b-white">
                         <img alt="Cao Ngọc Hoàng" src="https://api.adorable.io/avatars/55/Cao Ngọc Hoàng" class="rounded-circle">
@@ -537,7 +587,7 @@ components.efunHouse = `
                        <p class="ml-2">Cao Ngọc Hoàng</p>
                        <h5 class="ml-auto">1907</h5>
                     </div>
-                    <div class="d-flex pt-3">
+                    <div class="d-flex pt-3 hover-select">
                         <h4 style="width:32px">4</h4>
                        <div class="thumbnail-wrapper d48 circular bordered b-white">
                         <img alt="Lucas Nguyễn" src="https://api.adorable.io/avatars/55/Lucas Nguyễn" class="rounded-circle">
@@ -545,7 +595,7 @@ components.efunHouse = `
                        <p class="ml-2">Lucas Nguyễn</p>
                        <h5 class="ml-auto">1989</h5>
                     </div>
-                    <div class="d-flex pt-3">
+                    <div class="d-flex pt-3 hover-select">
                         <h4 style="width:32px">5</h4>
                        <div class="thumbnail-wrapper d48 circular bordered b-white">
                         <img alt="Phan Khanh Vuong" src="https://api.adorable.io/avatars/55/Phan Khanh Vuong" class="rounded-circle">
@@ -553,7 +603,7 @@ components.efunHouse = `
                        <p class="ml-2">Phan Khanh Vuong</p>
                        <h5 class="ml-auto">1895</h5>
                     </div>
-                    <div class="d-flex pt-3">
+                    <div class="d-flex pt-3 hover-select">
                         <h4 style="width:32px">6</h4>
                        <div class="thumbnail-wrapper d48 circular bordered b-white">
                         <img alt="Luan Trung" src="https://api.adorable.io/avatars/55/Luan Trung" class="rounded-circle">
@@ -561,7 +611,7 @@ components.efunHouse = `
                        <p class="ml-2">Luan Trung</p>
                        <h5 class="ml-auto">1895</h5>
                     </div>
-                    <div class="d-flex pt-3">
+                    <div class="d-flex pt-3 hover-select">
                         <h4 style="width:32px">7</h4>
                        <div class="thumbnail-wrapper d48 circular bordered b-white">
                         <img alt="Nguyen Huynh Cong Minh" src="https://api.adorable.io/avatars/55/Nguyễn Huỳnh Công Minh" class="rounded-circle">
@@ -569,7 +619,7 @@ components.efunHouse = `
                        <p class="ml-2">Nguyễn Huỳnh Công Minh</p>
                        <h5 class="ml-auto">1889</h5>
                     </div>
-                    <div class="d-flex pt-3">
+                    <div class="d-flex pt-3 hover-select">
                         <h4 style="width:32px">8</h4>
                        <div class="thumbnail-wrapper d48 circular bordered b-white">
                         <img alt="Cao Ngọc Hoàng" src="https://api.adorable.io/avatars/55/Đặng Trung" class="rounded-circle">
@@ -577,7 +627,7 @@ components.efunHouse = `
                        <p class="ml-2">Đặng Trung</p>
                        <h5 class="ml-auto">1871</h5>
                     </div>
-                    <div class="d-flex pt-3">
+                    <div class="d-flex pt-3 hover-select">
                         <h4 style="width:32px">9</h4>
                        <div class="thumbnail-wrapper d48 circular bordered b-white">
                         <img alt="Cao Ngọc Hoàng" src="https://api.adorable.io/avatars/55/Thảo Quyên" class="rounded-circle">
@@ -585,7 +635,7 @@ components.efunHouse = `
                        <p class="ml-2">Thảo Quên</p>
                        <h5 class="ml-auto">1865</h5>
                     </div>
-                    <div class="d-flex pt-3">
+                    <div class="d-flex pt-3 hover-select">
                         <h4 style="width:32px">10</h4>
                        <div class="thumbnail-wrapper d48 circular bordered b-white">
                         <img alt="Cao Ngọc Hoàng" src="https://api.adorable.io/avatars/55/Nguyễn Duy" class="rounded-circle">
@@ -613,7 +663,7 @@ components.efunHouse = `
             </div>
             
          </div>
-         <div class="card card-deflaut under-card">
+         <div class="card card-deflaut under-card left-brain-stopped">
                 <img src="./img/brain.webp" alt="" height="269" class="image" href="#">
                 <div class="overlay" style="font-weight: bold;">Khi não trái ngừng hoạt đông ? 
                     <p style="font-size:15px!important;color: rgb(59, 58, 58)!important;">Trong bài chia sẻ tuần này, Tiếng Anh Mỗi Ngày muốn giới thiệu đến...&#129504; </p>
@@ -626,9 +676,9 @@ components.efunHouse = `
   <section class="container" style="margin-top: 5%;" id="course">
     <div style="border-bottom: 2px solid yellow ;"><h5 style="font-family:montserrat; text-align: center;">KHÓA HỌC 
         <span style="font-size:30px;"> &#128175;</span></h5></div>
-   <div class="course-content pt-5" >
-    <div class="row justify-content-md-center">
-        <div class="col-md-4">
+   <div class="course-content pt-5">
+    <div class="row justify-content-md-center practice-skill">
+        <div class="col-md-4" data-aos="fade-right" data-aos-duration="1500">
             <div class="card card-deflaut active">
                 <div class="img-course">
                     <img src="./img/headphone.jpg" alt="nghe" height="70" class="rounded-circle imgcourse">
@@ -636,7 +686,7 @@ components.efunHouse = `
                 </div>
            </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-left" data-aos-duration="1500">
             <div class="card card-deflaut active">
                 <div class="img-course">
                     <img src="./img/talking.jpg" alt="nghe" height="70" class="rounded-circle imgcourse">
@@ -645,8 +695,8 @@ components.efunHouse = `
            </div>
         </div>
     </div>
-    <div class="row justify-content-md-center  w3-animate-right">
-        <div class="col-md-4 pt-3">
+    <div class="row justify-content-md-center  w3-animate-right  practice-skill">
+        <div class="col-md-4 pt-3" data-aos="fade-right" data-aos-duration="1500">
             <div class="card card-deflaut active">
                 <div class="img-course">
                     <img src="./img/book.jpg" alt="nghe" height="70" class="rounded-circle imgcourse">
@@ -654,9 +704,9 @@ components.efunHouse = `
                 </div>
            </div>
         </div>
-        <div class="col-md-4 pt-3">
+        <div class="col-md-4 pt-3" data-aos="fade-left" data-aos-duration="1500">
             <div class="card card-deflaut active">
-                <div class="img-course">
+                <div class="img-course" >
                     <img src="./img/pencile.jpg" alt="nghe" height="70" class="rounded-circle imgcourse">
                     <span style="font-weight: bold;">VIẾT</span>
                 </div>
@@ -1001,12 +1051,12 @@ components.userInformation = `
             <a class="nav-link blog-page" href="#">BLOGS</a>
           </li>
       </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item"><a class="navbar-avataruser" id="user-profile" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>           
+      <div class="navbar-nav ml-auto nav-flex-icons user-part">
+      <li class="user-information"><a class="navbar-avataruser" id="user-profile" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>           
         
            <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
-      </ul>
+      </div>
     </div>
   </nav>
   <!--/.Navbar -->
@@ -1230,13 +1280,13 @@ components.studyPage = `
           <a class="nav-link blog-page" href="#">BLOGS</a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+      <div class="navbar-nav ml-auto nav-flex-icons user-part">
+      <li class="user-information" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
            
         
       <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
-      </ul>
+      </div>
     </div>
   </nav>
   <!--/.Navbar -->
@@ -1404,12 +1454,12 @@ components.blogs = `
           <a class="nav-link blog-page" href="#" id="blogs-page">BLOGS</a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item user-information" ><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+      <div class="navbar-nav ml-auto nav-flex-icons user-part" id="user-div">
+        <li class="user-information"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
         
            <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
-      </ul>
+      </div>
     </div>
   </nav>
   <!--/.Navbar -->
@@ -1667,13 +1717,13 @@ components.stN1 = `
           <a class="nav-link blog-page" href="#">BLOGS</a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+      <div class="navbar-nav ml-auto nav-flex-icons user-part">
+      <li class="user-information" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
            
         
       <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
-      </ul>
+      </div>
     </div>
   </nav>
   <!-- /.Navbar --> 
@@ -1753,13 +1803,13 @@ components.stN2 = `
           <a class="nav-link blog-page" href="#">BLOGS</a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+      <div class="navbar-nav ml-auto nav-flex-icons user-part">
+      <li class="user-information" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
            
         
       <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
-      </ul>
+      </div>
     </div>
   </nav>
   <!-- /.Navbar --> 
@@ -1839,13 +1889,13 @@ components.stN3 = `
           <a class="nav-link blog-page" href="#">BLOGS</a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
+      <div class="navbar-nav ml-auto nav-flex-icons user-part">
+      <li class="user-information" id="user-page"><a class="navbar-avataruser" href="#"><img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="30"><b class="display-name"></b></a></li>
            
         
       <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
        
-      </ul>
+      </div>
     </div>
   </nav>
   <!-- /.Navbar --> 

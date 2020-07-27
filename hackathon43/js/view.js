@@ -18,6 +18,16 @@ view.showScreen = async function (screenName) {
                 view.showScreen('blogs');
             }
 
+            let reasonCard = document.getElementsByClassName('reason-card')[0];
+            reasonCard.onmouseover = function () {
+                reasonCard.style.width = '800px';
+            }
+
+            let enrollNow = document.getElementsByClassName('enroll-btn')[0];
+            enrollNow.onclick = function () {
+                view.showScreen('signUp');
+            }
+            
             break;
 
         case 'signIn':
@@ -141,17 +151,20 @@ view.showScreen = async function (screenName) {
             let userName = document.getElementsByClassName("display-name")[0];
             userName.innerHTML = firebase.auth().currentUser.displayName;
 
-            //back to home page
-            // let backToHomePage = document.getElementsByClassName('back-to-home-page')[0];
-            // backToHomePage.onclick = function () {
-            //     view.showScreen('homePage');
-                
-            // }
+            let doingTest = document.getElementById("doing-test");
+            doingTest.onclick = function () {
+                view.showScreen('studyPage');
+            }
 
             //link to study page
             let studyPage = document.getElementsByClassName('study-page')[0];
             studyPage.onclick = function () {
                 view.showScreen('studyPage');
+            }
+
+            let leftBrainStopped = document.getElementsByClassName('left-brain-stopped')[0];
+            leftBrainStopped.onclick = function () {
+                view.showScreen('blogs');
             }
             view.chat();
             view.chart();
@@ -283,38 +296,56 @@ view.showScreen = async function (screenName) {
                 view.showScreen('homePage');
             }
 
-            let clickOnBackEfun = document.getElementsByClassName('back-to-efun')[0];
-            clickOnBackEfun.onclick = function () {
-                view.showScreen('efunHouse');
-            }
+            firebase.auth().onAuthStateChanged(function(user) {
+                if(user != null){
+                    let displayNameToConsole = document.getElementsByClassName("display-name")[0];
+                    displayNameToConsole.innerHTML = firebase.auth().currentUser.displayName;
+                    
+                    //sign out when user click on sign out button
+                    let clickOnSignOutButton = document.getElementsByClassName('btn-logout')[0];
+                    clickOnSignOutButton.onclick = function () {
+                        controller.signOut();
+                    }
 
-            let clickOnUserAvatar = document.getElementsByClassName('user-information')[0];
-            clickOnUserAvatar.onclick = function (){
-                view.showScreen('userInformation');
-            }
+                    let clickOnBackEfun = document.getElementsByClassName('back-to-efun')[0];
+                    clickOnBackEfun.onclick = function () {
+                        view.showScreen('efunHouse');
+                    }
 
-            let displayNameToConsole = document.getElementsByClassName("display-name")[0];
-            displayNameToConsole.innerHTML = firebase.auth().currentUser.displayName;
+                    let clickOnUserAvatar = document.getElementsByClassName('user-information')[0];
+                    clickOnUserAvatar.onclick = function (){
+                        view.showScreen('userInformation');
+                    }
 
-            //sign out when user click on sign out button
-            let clickOnSignOutButton = document.getElementsByClassName('btn-logout')[0];
-            clickOnSignOutButton.onclick = function () {
-                controller.signOut();
-            }
-            let study2 = document.getElementsByClassName('study-page')[0];
-            study2.onclick = function () {
-                view.showScreen('studyPage');
-            }
-            let clickOnBlogPage = document.getElementsByClassName('blog-page')[0];
-            clickOnBlogPage.onclick = function () {
-                view.showScreen('blogs')
-            }
-            //display user name
-            //  let displayUser = document.getElementsByClassName("display-name")[0];
-            //  displayUser.innerHTML = firebase.auth().currentUser.displayName;   
-            let hienthiten = document.getElementsByClassName("display-name")[0];
-            hienthiten.innerHTML = firebase.auth().currentUser.displayName
+                    let study2 = document.getElementsByClassName('study-page')[0];
+                    study2.onclick = function () {
+                        view.showScreen('studyPage');
+                    }
+                    // // display user name when user signed in
+                    // let displayUser = document.getElementsByClassName("display-name")[0];
+                    // displayUser.innerHTML = firebase.auth().currentUser.displayName;   
+                }
+                if(user == null){
+                    let replaceUserInformationLink = document.getElementById('user-div');
+                    replaceUserInformationLink.innerHTML = `<button class="btn btn-link" id="sign-up-in-blogs" type="button" onclick="#">HỌC MIỄN PHÍ</button>`;
+                    
+                    let blogsSignInButton = document.getElementById('sign-up-in-blogs');
+                    blogsSignInButton.onclick = () =>{
+                        view.showScreen('signUp');
+                    }
+
+                    let replaceEfunHouse = document.getElementsByClassName('back-to-efun')[0];
+                    replaceEfunHouse.innerHTML = "";
+
+                    let replaceStudyPage = document.getElementById('study-page');
+                    replaceStudyPage.innerHTML = "";
+                }    
+            });
+            
+            // let hienthiten = document.getElementsByClassName("display-name")[0];
+            // hienthiten.innerHTML = firebase.auth().currentUser.displayName;
             view.chat();
+
             break;
         case 'stN1':
             content.innerHTML = components.stN1;
