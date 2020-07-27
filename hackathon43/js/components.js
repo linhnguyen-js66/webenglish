@@ -12,7 +12,7 @@ components.signUp = `
                     <div class="card-body">
                         <div class="brand-wrapper">
                             <a href="#!" id="home-page-container">
-                                <img src="./img/logoefun.png" alt="logo" class="logo">
+                                <img src="./img/logoefun.png" alt="logo" class="logo" style="margin-bottom:2%">
                             </a>
                         </div>
                         <p class="login-card-description">ĐĂNG KÝ TÀI KHOẢN</p>
@@ -41,7 +41,7 @@ components.signUp = `
                             <div class="message-error" id="sign-up-error"></div>
                             <div class="message-success" id="sign-up-success"></div>
                         </form>
-                        <p class="login-card-footer-text">Bạn đã đăng kí tài khoản?<a href="#!" id="sign-in-link" class="text-reset" style="color: orange !important;"> Cùng EFUN học nào!</a></p>
+                        <p class="login-card-footer-text">Bạn đã đăng kí tài khoản?<a href="#!" id="sign-in-link" class="text-reset" style="color: orange !important;"> Cùng 1412 học nào!</a></p>
                         <nav class="login-card-footer-nav">
                             <a href="#!">Terms of use.</a>
                             <br>
@@ -65,7 +65,7 @@ components.signIn = `
             <div class="col-md-7">
                 <div class="card-body">
                     <a href="#" class="brand-wrapper" id="home--page--link">
-                        <img src="./img/logoefun.png" alt="logo" class="logo">
+                        <img src="./img/logoefun.png" alt="logo" class="logo" style="margin-bottom:2%">
                     </a>
                     <p class="login-card-description">ĐĂNG NHẬP TÀI KHOẢN</p>
                     <form action="#!" id="form-sign-in">
@@ -83,7 +83,7 @@ components.signIn = `
                         <div class="message-error" id="sign-in-error"></div>
                     </form>
                     <a href="#!" class="forgot-password-link" id="forgot-password">Bạn quên mật khẩu?</a>
-                    <p class="login-card-footer-text">Tạo tài khoản mới? <a href="#!" class="text-reset" style="color: orange !important;" id="sign--up"> Đi theo EFUN nào!</a></p>
+                    <p class="login-card-footer-text">Tạo tài khoản mới? <a href="#!" class="text-reset" style="color: orange !important;" id="sign--up"> Đi theo 1412 nào!</a></p>
                     <nav class="login-card-footer-nav">
                         <a href="#!">Terms of use.</a>
                         <a href="#!">Privacy policy</a>
@@ -109,7 +109,7 @@ components.homePage = `
                 <a class="nav-link" href="#home" id="home-page-container"style="color: orange !important;">TRANG CHỦ</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#EFUN">EFUN <i class="fas fa-star" style="color:red !important;"></i></a>
+                <a class="nav-link" href="#EFUN">1412-E <i class="fas fa-star" style="color:red !important;"></i></a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#IDOLS">IDOLS</a>
@@ -390,7 +390,7 @@ components.efunHouse = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#" id="efun-house">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          <a class="nav-link" href="#" id="efun-house">1412 HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
           <li class="nav-item">
             <a class="nav-link study-page" href="#" id="study-page">LUYỆN TẬP</a>
@@ -433,7 +433,7 @@ components.efunHouse = `
                         
                                 <div class="inner">
                                         Điểm tuần này 
-                                        <div class="count-point" style="color: green!important;">0</div>
+                                        <div class="count-point" id="count-point" style="color: green!important;">0</div>
                                 </div>
                                 <div class="inner">
                                     Hạng tuần này
@@ -444,7 +444,7 @@ components.efunHouse = `
                         
                         <div class="inner">
                                 Tổng điểm 
-                                <div class="count-point" style="color: red!important;">0</div>
+                                <div class="count-point" id="sum-score" style="color: red!important;">0</div>
                         </div>
                         <div class="inner">
                             Xếp hạng
@@ -992,7 +992,7 @@ components.userInformation = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+            <a class="nav-link back-to-efun" href="#">1412 HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
           </li>
             <li class="nav-item">
               <a class="nav-link study-page" href="#">LUYỆN TẬP</a>
@@ -1022,12 +1022,8 @@ components.userInformation = `
                     <div class="card-title">Thông tin cá nhân &#128130;</div>
                 </div>
         <div class="card-body">
+            <img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="100" id="avatar">
             <form id="profile-form">
-                <div style="display: flex; justify-content: center; margin-bottom: 10px;">
-                    <label class="sc-fnwBNb fPHXFW" style="background-image: url(); width: 84px; height: 84px;">
-                        <!-- <input type="file" class="img-avatar"></label> -->
-                    </label>
-                </div>
                     <div class="form-group form-group-default">
                         <label>Họ và tên</label>
                         <input name="name" class="form-control" id="name-field" type="text" value="">
@@ -1054,6 +1050,7 @@ components.userInformation = `
                     </div>
                     <div class="message-error" id="city-error"></div>
                     <button class="btn btn-primary btn-cons" id="submit-btn" type="submit">Lưu</button>
+                   
                     <div class="message-error" id="submit-error"></div>
                     <div class="message-success" id="submit-success"></div>
                 </form>
@@ -1087,7 +1084,7 @@ components.userInformation = `
                         
                                 <div class="inner">
                                         Điểm tuần này 
-                                        <div class="count-point" style="color: green!important;">0</div>
+                                        <div class="count-point" id="count-point" style="color: green!important;">0</div>
                                 </div>
                                 <div class="inner">
                                     Hạng tuần này
@@ -1098,7 +1095,7 @@ components.userInformation = `
                         
                         <div class="inner">
                                 Tổng điểm 
-                                <div class="count-point" style="color: red!important;">0</div>
+                                <div class="count-point" id="sum-score" style="color: red!important;">0</div>
                         </div>
                         <div class="inner">
                             Xếp hạng
@@ -1221,7 +1218,7 @@ components.studyPage = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          <a class="nav-link back-to-efun" href="#">1412 HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
 
           <li class="nav-item">
@@ -1396,7 +1393,7 @@ components.blogs = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          <a class="nav-link back-to-efun" href="#">1412 HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
           <li class="nav-item">
             <a class="nav-link study-page" href="#" id="study-page">LUYỆN TẬP</a>
@@ -1416,7 +1413,7 @@ components.blogs = `
   <!--/.Navbar -->
 
         <section class="container" style="margin-top:5%;">  
-            <h1 class="text-header">EFUN ENGLISH'S BLOGS &#127849;</h1>
+            <h1 class="text-header">1412 ENGLISH'S BLOGS &#127849;</h1>
        <div class="row justify-content-center content-blog">
            
           <h2 class="text-head pt-4" style="color:tomato !important;">Khi não trái ngừng hoạt động ?</h2>
@@ -1655,7 +1652,7 @@ components.stN1 = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          <a class="nav-link back-to-efun" href="#">1412 HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
 
           <li class="nav-item">
@@ -1741,7 +1738,7 @@ components.stN2 = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          <a class="nav-link back-to-efun" href="#">1412 HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
 
           <li class="nav-item">
@@ -1827,7 +1824,7 @@ components.stN3 = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link back-to-efun" href="#">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+          <a class="nav-link back-to-efun" href="#">1412 HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
         </li>
 
           <li class="nav-item">

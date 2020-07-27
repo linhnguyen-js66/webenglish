@@ -88,6 +88,7 @@ view.showScreen = async function (screenName) {
                 if (isPassed(validateResult)) {
                     //send data to controller
                     controller.signUp(name, email, password);
+                    
                 }
 
             }
@@ -131,9 +132,12 @@ view.showScreen = async function (screenName) {
             }
             view.chat();
             view.chart();
+            controller.getScore();
             break;
         case 'userInformation':
             content.innerHTML = components.userInformation;
+            controller.loadInf();
+            controller.saveInformation();
             let clickonBlogPage = document.getElementsByClassName('blog-page')[0];
             clickonBlogPage.onclick = function () {
                 view.showScreen('blogs')
@@ -165,39 +169,7 @@ view.showScreen = async function (screenName) {
             returnToEfun.onclick = function () {
                 view.showScreen('efunHouse');
             }
-
-
-            document.getElementById('name-field').value = firebase.auth().currentUser.displayName;
-            document.getElementById('email-field').value = firebase.auth().currentUser.email;
-            document.getElementById('phone-number').value = firebase.auth().currentUser.phoneNumber;
-            document.getElementById('birthday').value = firebase.auth().currentUser.birthday;
-            document.getElementById('city').value = firebase.auth().currentUser.city;
-
-            // validate user input in profile form
-            let profileForm = document.getElementById('profile-form');
-            profileForm.onsubmit = function (event) {
-                event.preventDefault();
-
-                let nameField = document.getElementById('name-field').value;
-                let emailField = document.getElementById('email-field').value;
-                let phoneNumber = document.getElementById('phone-number').value;
-                let birthday = document.getElementById('birthday').value;
-                let city = document.getElementById('city').value;
-
-                let validateField = [
-                    view.validate(nameField != "", "name-error", "Input your name"),
-                    view.validate(emailField != "" && validateEmail(emailField), "email-error", "Invalid email"),
-                    view.validate(phoneNumber != "" && validatePhoneNumber(phoneNumber), "phone-number-error", "Invalid phone number"),
-                    view.validate(birthday != "", "birthday-error", "Input your birthday"),
-                    view.validate(city != "", "city-error", "Input your city")
-                ]
-
-                if (isPassed(validateField)) {
-                    //send data to controller
-                    controller.updateProfileForm(nameField, emailField, phoneNumber, birthday, city);
-                }
-            }
-
+        
             let changePasswordForm = document.getElementById('change-password-form');
             changePasswordForm.onsubmit = function (event) {
                 event.preventDefault();
@@ -207,6 +179,9 @@ view.showScreen = async function (screenName) {
                     controller.changePassword(newPassword);
                 }
             }
+            
+            controller.saveInformation();
+            controller.getScore();
             view.chat()
             break;
         case 'studyPage':
@@ -283,15 +258,18 @@ view.showScreen = async function (screenName) {
         case 'stN1':
             content.innerHTML = components.stN1;
             controller.game();
-            controller.saveScore();
+            await controller.saveScore();
             break;
         case 'stN2':
             content.innerHTML = components.stN2;
             controller.game2();
+            await controller.saveScore();
             break;
         case 'stN3':
             content.innerHTML = components.stN3;
             controller.game3();
+            await controller.saveScore();
+            break;
     }
 }
 view.chat = async function () {
@@ -425,7 +403,7 @@ view.chart = function () {
         data: {
             labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
             datasets: [{
-                label: 'Tốc độ học',
+                label: 'Thời gian học',
                 backgroundColor: 'rgb(0, 102, 255,0.6)',
                 borderColor: 'rgb(0, 102, 255)',
                 data: [65, 59, 80, 82, 56, 50, 70, 75, 87]

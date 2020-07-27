@@ -21,6 +21,15 @@ controller.signUp = async function (name, email, password) {
     }
 
     view.setActive("sign-up-btn", true);
+    // ok xong chỗ này
+    let uid = await firebase.auth().currentUser.uid;
+    let save = await firebase.firestore().collection('userInformations').doc(uid).set({
+        name: name,
+        email: email,
+        phoneNumber: '',
+        dateOfBirth: '',
+        city: ''
+    });
 }
 
 controller.signIn = async function (email, password) {
@@ -318,7 +327,7 @@ controller.game = function () {
     }
 
     // window.onload = function () {
-    var fiveMinutes = 60*3,
+    var fiveMinutes = 60 * 3,
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
     // };
@@ -460,7 +469,7 @@ controller.game2 = function () {
     }
 
     // window.onload = function () {
-    var fiveMinutes = 60*3,
+    var fiveMinutes = 60 * 3,
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
     // };
@@ -603,22 +612,90 @@ controller.game3 = function () {
     }
 
     // window.onload = function () {
-    var fiveMinutes = 60*3,
+    var fiveMinutes = 60 * 3,
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
     // };
 }
-controller.saveScore = async function(){
-const mostRecentScore = localStorage.getItem('mostRecentScore');
-let currenUserName = firebase.auth().currentUser.email;
-let temp;
+controller.saveScore = async function () {
+    const mostRecentScore = Number(localStorage.getItem('mostRecentScore'));
+    let currenUserName = firebase.auth().currentUser.email;
 
-console.log(temp)
-const score = {
-    score: mostRecentScore,
-    username: currenUserName
+    score = {
+        score: mostRecentScore,
+        user: currenUserName
+    }
+    let save = await firebase.firestore().collection('storageScore').add(score)
 }
-console.log(score)
+controller.getScore = async function () {
+  
+    let getdata = await firebase.firestore().collection('storageScore').get();
+    let userName = firebase.auth().currentUser.email
+    let sumScore = [];
+    let countPoint = document.getElementById('count-point');
+    let sumPoint = document.getElementById('sum-score')
+    for (let data of getdata.docs) {
+        let get = Number(data.data().score)
+        if (data.data().user == userName) {
+            // console.log(get);
+            await sumScore.push(get);
+            console.log(sumScore)
+            let sum = sumScore.reduce(function (a, b) {
+                return a + b;
+            }, 0);
+            // console.log(sum);
+            countPoint.innerHTML = sum;
+            sumPoint.innerHTML = sum;
+        }
+    }
+
 }
 
-// đôi dầy. lỗi chỗ nào
+// load information
+controller.loadInf = async function(){
+    // cú pháp đúng chưa ý nhỉ@@ hay phai cho vong lap vao c nhi
+    let idUser = await firebase.auth().currentUser.uid
+    let docInf = await firebase.firestore().collection('userInformations').doc(idUser).get();
+    let email = docInf.data().email;
+    let phoneNumber = docInf.data().phoneNumber;
+    let name = docInf.data().name;
+    // tiếp theo các trường khác tí làm nhé
+    console.log(email);
+    // 
+    document.getElementById('email-field').value = email;
+    document.getElementById('phone-number').value = phoneNumber;
+    document.getElementById('name-field').value = name;
+    document.getElementById('birthday').value = docInf.data().dateOfBirth;
+    document.getElementById('city').value = docInf.data().city;
+    // hiển thị ra thì viết ở đây
+}
+controller.saveInformation = function (){
+    let profileForm = document.getElementById('profile-form');
+  
+    profileForm.onsubmit = async function(event){
+        event.preventDefault();
+        let phoneNumber =  document.getElementById('phone-number').value;
+        let birthday =   document.getElementById('birthday').value;
+        let city = document.getElementById('city').value;
+        let userEmail = await firebase.auth().currentUser.email;
+        let userName = await firebase.auth().currentUser.displayName;
+        let idUser = await firebase.auth().currentUser.uid
+        var docRef = await  firebase.firestore().collection("userInformations").doc(idUser);
+        // update thông tin
+        // document.getElementById('email-field').value= userEmail;
+        // console.log('abc')
+        // if(idUser.exist){
+            
+        // }
+        // nói chung là dc r ấy=)) ok chij ti em len bai marketing e de chi o dau de luon :)) mentor nhiet tinh
+        // hihi
+        
+        await firebase.firestore().collection('userInformations').doc(idUser).update({
+            phoneNumber:phoneNumber,
+            city : city,
+            dateOfBirth: birthday
+        })
+    }
+}
+// chỗ html viết ở đâu thế=)) chỗ value ấy ạ em thấy lỗi e bỏ đi rồi :))
+// html của đoạn này ý
