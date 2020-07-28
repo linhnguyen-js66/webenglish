@@ -796,25 +796,6 @@ body{
     float: right !important;
     margin-top: 10px !important;
 }
-<<<<<<< HEAD
-@media (max-width:629px) {
-    #imgslide1 {
-      display: none;
-    }
-    #imgslide2{
-        display: none;
-    }
-    #imgslide3{
-        display: none;
-    }
-    #left{
-        display: none;
-    }
-    #right{
-        display: none;
-    }
-  }
-=======
 
 #avatar{
     display: block!important; 
@@ -822,5 +803,3 @@ body{
     margin-right: auto;
 }
 
-
->>>>>>> c0790f65b99f90e4008b58dc09c7f2cae1a8ea09
