@@ -322,21 +322,108 @@ view.showScreen = async function (screenName) {
             view.chat();
 
             break;
-        case 'stN1':
-            content.innerHTML = components.stN1;
-            controller.game();
-            await controller.saveScore();
-            break;
-        case 'stN2':
-            content.innerHTML = components.stN2;
-            controller.game2();
-            await controller.saveScore();
-            break;
-        case 'stN3':
-            content.innerHTML = components.stN3;
-            controller.game3();
-            await controller.saveScore();
-            break;
+            case 'stN1':
+                content.innerHTML = components.stN1;
+                let clickLogo = document.getElementsByClassName('back-to-home-page')[0];
+                clickLogo.onclick = function () {
+                    view.showScreen('homePage');
+                }
+    
+                let clickEfunLink = document.getElementsByClassName('back-to-efun')[0];
+                clickEfunLink.onclick = function () {
+                    view.showScreen('efunHouse');
+                }
+                let study3 = document.getElementsByClassName('study-page')[0];
+                study3.onclick = function () {
+                    view.showScreen('studyPage');
+                }
+                let clickProfile = document.getElementById('user-page');
+                clickProfile.onclick = function (){
+                    view.showScreen('userInformation');
+                }
+                //sign out when user click on sign out button
+                let clickLogOutButton = document.getElementsByClassName('btn-logout')[0];
+                clickLogOutButton.onclick = function () {
+                    controller.signOut();
+                }
+                let clickOnYourBlogPage = document.getElementsByClassName('blog-page')[0];
+                clickOnYourBlogPage.onclick = function () {
+                    view.showScreen('blogs')
+                }
+                //display user name
+                let displayOfUserName = document.getElementsByClassName("display-name")[0];
+                displayOfUserName.innerHTML = firebase.auth().currentUser.displayName;
+                controller.game();
+                await controller.saveScore();
+                break;
+            case 'stN2':
+                content.innerHTML = components.stN2;
+                let clickYourLogo = document.getElementsByClassName('back-to-home-page')[0];
+                clickYourLogo.onclick = function () {
+                    view.showScreen('homePage');
+                }
+    
+                let clickYourLink = document.getElementsByClassName('back-to-efun')[0];
+                clickYourLink.onclick = function () {
+                    view.showScreen('efunHouse');
+                }
+                let study4 = document.getElementsByClassName('study-page')[0];
+                study4.onclick = function () {
+                    view.showScreen('studyPage');
+                }
+                let clickYourProfile = document.getElementById('user-page');
+                clickYourProfile.onclick = function (){
+                    view.showScreen('userInformation');
+                }
+                //sign out when user click on sign out button
+                let clickButtonLogOutButton = document.getElementsByClassName('btn-logout')[0];
+                clickButtonLogOutButton.onclick = function () {
+                    controller.signOut();
+                }
+                let clickYourBlogPage = document.getElementsByClassName('blog-page')[0];
+                clickYourBlogPage.onclick = function () {
+                    view.showScreen('blogs')
+                }
+                //display user name
+                let displayYourName = document.getElementsByClassName("display-name")[0];
+                displayYourName.innerHTML = firebase.auth().currentUser.displayName;
+                controller.game2();
+                await controller.saveScore();
+                break;
+            case 'stN3':
+                content.innerHTML = components.stN3;
+                let clickYourLogoo = document.getElementsByClassName('back-to-home-page')[0];
+                clickYourLogoo.onclick = function () {
+                    view.showScreen('homePage');
+                }
+    
+                let clickYourLinkk = document.getElementsByClassName('back-to-efun')[0];
+                clickYourLinkk.onclick = function () {
+                    view.showScreen('efunHouse');
+                }
+                let study5 = document.getElementsByClassName('study-page')[0];
+                study5.onclick = function () {
+                    view.showScreen('studyPage');
+                }
+                let clickYourProfilee = document.getElementById('user-page');
+                clickYourProfilee.onclick = function (){
+                    view.showScreen('userInformation');
+                }
+                //sign out when user click on sign out button
+                let clickButtonLogOutButtonn = document.getElementsByClassName('btn-logout')[0];
+                clickButtonLogOutButtonn.onclick = function () {
+                    controller.signOut();
+                }
+                let clickYourBlogPagee = document.getElementsByClassName('blog-page')[0];
+                clickYourBlogPagee.onclick = function () {
+                    view.showScreen('blogs')
+                }
+                //display user name
+                let displayYourNamee = document.getElementsByClassName("display-name")[0];
+                displayYourNamee.innerHTML = firebase.auth().currentUser.displayName;
+                controller.game3();
+                await controller.saveScore();
+                break;
     }
 }
 view.chat = async function () {
