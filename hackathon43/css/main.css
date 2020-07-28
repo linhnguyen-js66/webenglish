@@ -802,3 +802,21 @@ body{
     margin-left: auto; 
     margin-right: auto;
 }
+
+@media (max-width:629px) {
+    #imgslide1 {
+      display: none;
+    }
+    #imgslide2{
+        display: none;
+    }
+    #imgslide3{
+        display: none;
+    }
+    #left{
+        display: none;
+    }
+    #right{
+        display: none;
+    }
+  }
