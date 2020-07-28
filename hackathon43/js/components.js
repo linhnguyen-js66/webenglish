@@ -143,24 +143,24 @@ components.homePage = `
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <img src="./mentor.jpg" alt="Los Angeles">
+              <img src="./img/mentor.jpg" alt="Los Angeles" id="imgslide1">
             </div>
 
             <div class="item">
-              <img src="./teamwork-1.jpg" alt="Chicago">
+              <img src="./img/teamwork-1.jpg" alt="Chicago" id="imgslide2">
             </div>
           
             <div class="item">
-              <img src="./teamwork-5.jpg" alt="New york">
+              <img src="./img/teamwork-5.jpg" alt="New york" id="imgslide3">
             </div>
           </div>
 
           <!-- Left and right controls -->
           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="glyphicon glyphicon-chevron-left" id="left"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <a class="right carousel-control" href="#myCarousel" data-slide="next" id="right">
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
           </a>
@@ -508,7 +508,7 @@ components.efunHouse = `
                     <span class="flag">
                         <img alt="bxh" src="./img/track.png" style="width:120%">
                       </span>
-                    <div class="card-title" style="width:100%;margin-left:53px;"><span class="text">Lộ trình học </span></div>
+                    <div class="card-title" style="width:100%;margin-left:62px;"><span class="text">Lộ trình học </span></div>
                 </div>
                 <div class="card-body">
                    <div class="d-flex flex-row justify-content-between">
@@ -652,7 +652,7 @@ components.efunHouse = `
                   <span class="flag">
                     <img alt="bxh" src="https://tienganhmoingay.com/static/LearningPlan/images/new/upload/icon_ranking.png" style="width:70%">
                   </span>
-                  <span class="card-title" style="margin-left:40px;">
+                  <span class="card-title" style="margin-left:46px;">
                       Charts
                   </span>
              </div>
@@ -1071,7 +1071,7 @@ components.userInformation = `
                     <div class="card-title">Thông tin cá nhân &#128130;</div>
                 </div>
         <div class="card-body">
-            <img src="./img/phuong.jpg" alt="avatar" class="rounded-circle" height="100" id="avatar">
+            <img src="./img/phuong.jpg" alt="avatar" class="avatar rounded-circle" id="avatar" height="100">
             <form id="profile-form">
                     <div class="form-group form-group-default">
                         <label>Họ và tên</label>
