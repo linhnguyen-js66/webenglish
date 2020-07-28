@@ -508,7 +508,7 @@ components.efunHouse = `
                     <span class="flag">
                         <img alt="bxh" src="./img/track.png" style="width:120%">
                       </span>
-                    <div class="card-title" style="width:100%;margin-left:53px;"><span class="text">Lộ trình học </span></div>
+                    <div class="card-title" style="width:100%;margin-left:53px;"><span class="text" style="margin-left:20px">Lộ trình học </span></div>
                 </div>
                 <div class="card-body">
                    <div class="d-flex flex-row justify-content-between">
@@ -652,7 +652,7 @@ components.efunHouse = `
                   <span class="flag">
                     <img alt="bxh" src="https://tienganhmoingay.com/static/LearningPlan/images/new/upload/icon_ranking.png" style="width:70%">
                   </span>
-                  <span class="card-title" style="margin-left:40px;">
+                  <span class="card-title" style="margin-left:47px;">
                       Charts
                   </span>
              </div>

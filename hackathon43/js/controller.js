@@ -39,12 +39,25 @@ controller.signIn = async function (email, password) {
 
     try {
         await firebase.auth().signInWithEmailAndPassword(email, password);
+        await firebase.auth().onAuthStateChanged(function(user) {
+            console.log(user);
+            if(user != null && user.emailVerified) {
+                view.showScreen('efunHouse');
+               
+            }else if(user == null){
+                view.showScreen('homePage');
+                // view.setText("sign-in-error", "Your email must be verify.");
+            }
+        });
+        // checkOnSign();
         //link to home page when sign in success
     } catch (error) {
         //return error message when user input wrong information
         view.setText("sign-in-error", error.message);
         view.setActive("login-btn", true);
     }
+
+    
 }
 
 controller.signOut = async function (currentUser) {
