@@ -508,7 +508,11 @@ components.efunHouse = `
                     <span class="flag">
                         <img alt="bxh" src="./img/track.png" style="width:120%">
                       </span>
+<<<<<<< HEAD
                     <div class="card-title" style="width:100%;margin-left:62px;"><span class="text">Lộ trình học </span></div>
+=======
+                    <div class="card-title" style="width:100%;margin-left:53px;"><span class="text" style="margin-left:20px">Lộ trình học </span></div>
+>>>>>>> c0790f65b99f90e4008b58dc09c7f2cae1a8ea09
                 </div>
                 <div class="card-body">
                    <div class="d-flex flex-row justify-content-between">
@@ -652,7 +656,11 @@ components.efunHouse = `
                   <span class="flag">
                     <img alt="bxh" src="https://tienganhmoingay.com/static/LearningPlan/images/new/upload/icon_ranking.png" style="width:70%">
                   </span>
+<<<<<<< HEAD
                   <span class="card-title" style="margin-left:46px;">
+=======
+                  <span class="card-title" style="margin-left:47px;">
+>>>>>>> c0790f65b99f90e4008b58dc09c7f2cae1a8ea09
                       Charts
                   </span>
              </div>
