@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <link rel="stylesheet" href="./css/main.css">
+
+  <title>EFUN ENGLISH</title>
+
+</head>
+
+<body>
+  <!--Navbar -->
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light sticky-top scrolling-navbar">
+    <a class="navbar-brand" href="main.html"><img src="./img/logoefun.png" alt="LOGO" height="30"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="efun.html">EFUN HOUSE<i class="fas fa-star" style="color:red !important;"></i></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#course">KHÓA HỌC</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#baigiang">BÀI GIẢNG</a>
+          </li>  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">LUYỆN TẬP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">BLOGS</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item"><a class="navbar-avataruser" href="user.html"><img src="./img/phuong.jpg" alt="avatar"
+              class="rounded-circle" height="30"><b>Linh</b></a></li>
+
+
+        <button type="button" class="btn-logout" name="logout" id="btn-logout">Đăng xuất</button>
+
+      </ul>
+    </div>
+  </nav>
+  <!--/.Navbar -->
+  <section class="container">
+    <button class="btn btn-youtube" style="background-color:#1ab2ff;margin-top:3%;">&#127817; Xem các bài giảng</button>
+  </section>
+  <section class="container">
+    <div class="row pt-4">
+      <div class="col-sm-4">
+        <div class="card card-default">
+          <div class="card-header">
+            <div class="card-title text-first" style="width:100%">IELTS TEST 1</div>
+          </div>
+          <div class="card-body">
+            <div class="card-title-body">
+              <img src="./img/gif1.gif" alt="gif gif" width="200" class="img-center" onmouseenter="bigImge(this)"
+                onmouseleave="normalImge(this)">
+              <img src="./img/gif2.gif" alt="gif gif" width="200" class="img-another-center" id="move"
+                style="display:none;">
+            </div>
+            <h5>Bài làm số 1</h5>
+            <p>
+              Thời gian làm bài: 60 phút
+            </p>
+            <p style="color:gray!important;">
+              Các thầy cô giáo tham gia biên soạn đề thi là những người có trình độ chuyên môn cao, 
+              có phương pháp sư phạm bài bản,có hiểu biết sâu sắc về môn học, lĩnh vực mà các thầy 
+              cô biên soạn và giảng dạy.
+            </p>
+            <button class="btn btn-click" id="click-listen-one">Làm bài</button>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card card-default">
+          <div class="card-header">
+            <div class="card-title text-first" style="width:100%">IELTS TEST 2</div>
+          </div>
+          <div class="card-body">
+            <div class="card-title-body">
+              <img src="./img/gif3.gif" alt="gif gif" width="190"height="186" class="img-center" onmouseenter="bigImg(this)"
+                onmouseleave="normalImg(this)">
+              <img src="./img/gif4.gif" alt="gif gif" width="190" height="186" class="img-another-center" id="move2"
+                style="display:none;">
+            </div>
+            <h5>Bài làm số 2</h5>
+            <p>
+              Thời gian làm bài: 60 phút
+            </p>
+            <p style="color:gray!important;">
+              Các thầy cô giáo tham gia biên soạn đề thi là những người có trình độ chuyên môn cao, 
+              có phương pháp sư phạm bài bản,có hiểu biết sâu sắc về môn học, lĩnh vực mà các thầy 
+              cô biên soạn và giảng dạy.
+            </p>
+            <button class="btn btn-click" >Làm bài</button>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card card-default">
+          <div class="card-header">
+            <div class="card-title text-first" style="width:100%">IELTS TEST 3</div>
+          </div>
+          <div class="card-body">
+            <div class="card-title-body">
+              <img src="./img/gif5.gif" alt="gif gif" width="190" height="185" class="img-center" onmouseenter="bigImgg(this)"
+                onmouseleave="normalImgg(this)">
+              <img src="./img/gif6.gif" alt="gif gif" width="190" height="185" class="img-another-center" id="move3"
+                style="display:none;">
+            </div>
+            <h5>Bài làm số 3</h5>
+            <p>
+              Thời gian làm bài: 60 phút
+            </p>
+            <p style="color:gray!important;">
+              Các thầy cô giáo tham gia biên soạn đề thi là những người có trình độ chuyên môn cao, 
+              có phương pháp sư phạm bài bản,có hiểu biết sâu sắc về môn học, lĩnh vực mà các thầy 
+              cô biên soạn và giảng dạy.
+            </p>
+            <button class="btn btn-click" >Làm bài</button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function bigImge(x) {
+      x.style.display = "none"
+      document.getElementById('move').style.display = 'block'
+    }
+
+    function normalImge(x) {
+      x.style.display = "block"
+      document.getElementById('move').style.display = 'none'
+    }
+    function bigImg(x) {
+      x.style.display = "none"
+      document.getElementById('move2').style.display = 'block'
+    }
+
+    function normalImg(x) {
+      x.style.display = "block"
+      document.getElementById('move2').style.display = 'none'
+    }
+    function bigImgg(x) {
+      x.style.display = "none"
+      document.getElementById('move3').style.display = 'block'
+    }
+
+    function normalImgg(x) {
+      x.style.display = "block"
+      document.getElementById('move3').style.display = 'none'
+    }
+  </script>
+</body>
+
+</html>
