@@ -129,8 +129,8 @@ components.homePage = `
     <div class="carousel-inner" role="listbox"> -->
 
     <div class="container head-part" id="head-part">
-    <div class="d-flex flex-row justify-content-between">
-    <div class="p-2">
+    <div class="row">
+    <div class="col-md-6 imgslide" id="img-slide">
         <div class="carousel-part">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
@@ -143,31 +143,31 @@ components.homePage = `
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <img src="./mentor.jpg" alt="Los Angeles">
+              <img src="./mentor.jpg" alt="Los Angeles" id="imgslide1">
             </div>
 
             <div class="item">
-              <img src="./teamwork-1.jpg" alt="Chicago">
+              <img src="./teamwork-1.jpg" alt="Chicago" id="imgslide2">
             </div>
           
             <div class="item">
-              <img src="./teamwork-5.jpg" alt="New york">
+              <img src="./teamwork-5.jpg" alt="New york" id="imgslide3">
             </div>
           </div>
 
           <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev" id="left">
             <span class="glyphicon glyphicon-chevron-left"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <a class="right carousel-control" href="#myCarousel" data-slide="next" id="right">
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
           </a>
         </div>
       </div>
     </div>
-    <div class="p-2>
+    <div class="col-md-6">
         <div class="enroll-course">
             <div class="description-part">
                 <span class="title-description">1412-E HỆ THỐNG HỌC IELTS TRỰC TUYẾN</span>
