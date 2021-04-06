@@ -156,7 +156,7 @@ view.showScreen = async function (screenName) {
             doingTest.onclick = function () {
                 view.showScreen('studyPage');
             }
-
+            
             //link to study page
             let studyPage = document.getElementsByClassName('study-page')[0];
             studyPage.onclick = function () {
@@ -169,6 +169,7 @@ view.showScreen = async function (screenName) {
             }
             view.chat();
             view.chart();
+            view.userHighScore()
             controller.getScore();
             break;
         case 'userInformation':
@@ -426,6 +427,33 @@ view.showScreen = async function (screenName) {
                 break;
     }
 }
+view.userHighScore = async function(){
+    try{
+        let rank = document.getElementById('userHighScore');
+        rank.innerHTML = ""
+        let resultData = []
+        let snapshot = await firebase.firestore().collection("DataInfoPoint").get()
+        for(let doc of snapshot.docs){
+            resultData.push(refineData(doc))
+        }
+        resultData.sort((a,b)=>b.point - a.point)
+        for(let item = 0; item < resultData.length;item++){
+            let html = `<div class="d-flex hover-select" style="margin-bottom:16px">
+            <h4 style="width:32px">${item+1}</h4>
+           <div class="thumbnail-wrapper d48 circular bordered b-white" style="margin-top:6px">
+               <img  alt="Nguyễn Văn Phúc" class="rounded-circle" src=${resultData[item].image}
+               width="50" height="50"
+               >
+           </div>
+           <p class="ml-2" style="margin-top:8px">${resultData[item].user}</p>
+           <h5 class="ml-auto">${resultData[item].point}</h5>
+        </div>`
+        rank.innerHTML += html
+        }
+    }catch(error){
+        console.log(error)
+    }
+}
 view.chat = async function () {
     let formAddConversation = document.getElementById('form-add-conversation');
     formAddConversation.onsubmit = function (event) {
@@ -558,8 +586,8 @@ view.chart = function () {
             labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
             datasets: [{
                 label: 'Thời gian học',
-                backgroundColor: 'rgb(0, 102, 255,0.6)',
-                borderColor: 'rgb(0, 102, 255)',
+                // backgroundColor: 'rgb(0, 102, 255,0.6)',
+                // borderColor: 'rgb(0, 102, 255)',
                 data: [65, 59, 80, 82, 56, 50, 70, 75, 87]
             }]
         },

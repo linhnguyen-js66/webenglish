@@ -1,6 +1,7 @@
 let model = {
     conversations: [],
-    currentConversation: null
+    currentConversation: null,
+    userHighScore:[]
 }
 
 model.saveConversations = function (conversations) {

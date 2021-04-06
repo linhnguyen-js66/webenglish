@@ -86,6 +86,7 @@ controller.updateProfileForm = async function (name, email, phoneNumber, birthda
     }
 }
 
+
 controller.changePassword = async function (password) {
     let user = firebase.auth().currentUser;
     let newPassword = document.getElementById('input-new-password').value;
